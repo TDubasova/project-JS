@@ -1,0 +1,67 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+body {
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.conteiner {
+    box-sizing: border-box;
+    width: 320px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    // @media screen and (min-width: 480px) {
+    //     width: 480px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+
+    // @media screen and (min-width: 768px) {
+    //     width: 768px;
+    //     padding-right: 32px;
+    //     padding-left: 32px;
+    // }
+
+    // @media screen and (min-width: 1200px) {
+    //     width: 1200px;
+    //     padding-right: 16px;
+    //     padding-left: 16px;
+    // }
+}
