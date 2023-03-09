@@ -4,26 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmoteka</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./sass/index.css" />
   </head>
   <body>
    <header class="header">
     <section class="conteiner header-conteiner">
-      <div class="header__menu"> 
-        <a class="header__link header__link--logo" href="./index.html"><img class="header__logo" src="./images/logo-fil-24m.png"/></a>
+      <div class="header__menu">
+        <a class="header__logo header__logo--link" href="./index.html">
+          <img class="header__logo-img" 
+          srcset="./images/logo-24.png 1x,
+                  ./images/logo-24@2x.png 2x"
+          src='./images/logo-24.png'
+          alt="Filmoteka website logo as a piece of film"/>
+          <span class="header__logo-title">Filmoteka</span>
+        </a>
       <nav class="header__navigation">
         <a href="./index.html" class="header__link header__link--current">HOME</a>
         <a href="./library.html" class="header__link">MY LIBRARY</a>
       </nav>
       </div>
       <form class="search__form">
-        <input class="serch__input" type="text" name="search" placeholder="Movie search" autofocus>
+        <input class="serch__input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" autofocus>
         <button type="submit" class="search__button">
-          <img src="./images/search 2.svg"/>
+          <img src="./images/search.png"/>
         </button>
       </form>
+      <p class="search__message is-hidden">Search result not successful. Enter the correct movie name and</p>
     </section>
    </header>
-   <main></main>
+   <main>
+    <section class="conteiner gallery-movies">
+      <h1 class="gallery-movies__title title--hidden">Gallery of movies</h1>
+      <div class="movie-card">
+        <h2 class="movie-card__title"></h2>
+        <img width="280" alt=""/>
+        <div class="movie-card__info">
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+    </section>
+   </main>
+   <footer class="footer">
+    <div class="conteiner footer-conteiner">
+      <p class="footer__copyright">&copy; 2020 | All Rights Reserved |</p>
+      <div class="footer__developed">
+          <p>Developed with</p>
+          <img class="footer__developed-img"
+          srcset="./images/heart-14.png 1x,
+                  ./images/heart-14@2x.png 2x"
+          src="./images/heart-14.png"
+          alt="The little orange heart"/>
+        <button class="footer__developed-btn" type="button">by GoIT Students</button>
+        <!-- modal window -->
+      </div>
+    </div>
+   </footer>
   </body>
 </html>

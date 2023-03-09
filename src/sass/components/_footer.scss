@@ -1,0 +1,39 @@
+.footer {
+    background-color: #F7F7F7;
+}
+
+.footer-conteiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    text-align: center;
+    color: #545454;
+}
+
+.footer__copyright {
+    margin-bottom: 10px;
+}
+
+.footer__developed {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+}
+
+.footer__developed-img {
+    width: 14px;
+    height: 13px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.footer__developed-btn {
+    display: block;
+    border: none;
+    padding: 0;
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}

@@ -5,13 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmoteca. My library</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./sass/index.css" />
 </head>
 <body>
     <header class="header">
     <section class="conteiner header-conteiner">
-      <div class="header__menu"> 
-        <a class="header__link header__link--logo" href="./index.html"><img class="header__logo" src="./images/logo-fil-24m.png"/></a>
+      <div class="header__menu">
+        <a class="header__logo header__logo--link" href="./index.html">
+          <img class="header__logo-img" 
+          srcset="./images/logo-24.png 1x,
+                  ./images/logo-24@2x.png 2x"
+          src='./images/logo-24.png'/>
+          <span class="header__logo-title">Filmoteka</span>
+        </a>
       <nav class="header__navigation">
         <a href="./index.html" class="header__link">HOME</a>
         <a href="./library.html" class="header__link header__link--current">MY LIBRARY</a>
@@ -20,9 +31,10 @@
       <form class="search__form">
         <input class="serch__input" type="text" name="search" placeholder="Movie search" autofocus>
         <button type="submit" class="search__button">
-          <img src="./images/search 2.svg"/>
+          <img src="./images/search.png"/>
         </button>
       </form>
+      <p class="search__message is-hidden">Search result not successful. Enter the correct movie name and</p>
     </section>
    </header>
 </body>
