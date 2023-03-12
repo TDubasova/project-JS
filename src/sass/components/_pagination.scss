@@ -1,0 +1,114 @@
+.tui-pagination {
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 280px;
+    height: 40px;
+    font-weight: inherit;
+    font-size: 12px;
+    line-height: 1.14;
+
+    @media screen and (min-width: 768px) {
+        width: 374px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
+.tui-page-btn.tui-prev-is-ellip.tui-first-child,
+.tui-page-btn.tui-next-is-ellip.tui-last-child {
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.tui-pagination .tui-first,
+.tui-pagination .tui-first+.tui-prev {
+    border: none;
+}
+
+.tui-pagination .tui-ico-prev {
+    width: 18px;
+    height: 30px;
+    color: black;
+
+}
+
+.tui-pagination .tui-first,
+.tui-pagination .tui-ico-first,
+.tui-page-btn.tui-last,
+.tui-pagination .tui-ico-last {
+    display: none;
+}
+
+
+
+.tui-pagination .tui-page-btn {
+    color: #000000;
+    padding: 13px 11px;
+}
+
+.tui-page-btn.tui-is-disabled.tui-first,
+.tui-pagination .tui-first {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tui-pagination .tui-is-disabled .tui-ico-prev,
+.tui-pagination .tui-is-disabled .tui-ico-next {
+    background-position: center;
+}
+
+.tui-pagination .tui-next+.tui-last,
+.tui-pagination .tui-page-btn {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: none; 
+    text-align: center;
+}
+
+.tui-pagination .tui-is-disabled .tui-ico-last {
+    background-position: center;
+}
+
+.tui-pagination .tui-ico-next {
+    vertical-align: baseline;
+    background: url('../images/arrow-right.png'), no-repeat;
+    color: black;
+    width: 16px;
+    height: 16px;
+}
+
+.tui-pagination .tui-ico-prev {
+    margin: 0 auto;
+    vertical-align: baseline;
+    background: url('../images/arrow-left.png'), no-repeat;
+    width: 16px;
+    height: 16px;
+}
+
+.tui-pagination .tui-next,
+.tui-page-btn.tui-prev-is-ellip.tui-first-child {
+    border: none;
+}
+
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background: #FF6B08;
+    background-color: #FF6B08;
+    
+}
+
+.tui-pagination .tui-last-child.tui-is-selected,
+.tui-pagination .tui-first-child.tui-is-selected {
+    border: none;
+}

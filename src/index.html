@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./sass/index.css" />
+    <script type="module" src="./index.js"></script>
   </head>
   <body>
-   <header class="header">
+   <header class="header header-home">
     <section class="conteiner header-conteiner">
       <div class="header__menu">
         <a class="header__logo header__logo--link" href="./index.html">
@@ -38,30 +39,30 @@
     </section>
    </header>
    <main>
-    <section class="conteiner gallery-movies">
-      <h1 class="gallery-movies__title title--hidden">Gallery of movies</h1>
-      <div class="movie-card">
-        <h2 class="movie-card__title"></h2>
-        <img width="280" alt=""/>
-        <div class="movie-card__info">
-          <p></p>
-          <p></p>
-        </div>
+    <section class="conteiner gallery">
+      <h1 class="gallery__title title--hidden">Gallery of movies</h1>
+      <div class="movie__set js-movie-set">
       </div>
+
+      <div id="pagination" class="tui-pagination"></div>
     </section>
    </main>
    <footer class="footer">
     <div class="conteiner footer-conteiner">
-      <p class="footer__copyright">&copy; 2020 | All Rights Reserved |</p>
+      <div class="footer__info">
+      <p class="footer__copyright">&copy; 2020 | All Rights Reserved | </p>
       <div class="footer__developed">
-          <p>Developed with</p>
+          <p class="footer__developed-text">Developed with</p>
           <img class="footer__developed-img"
           srcset="./images/heart-14.png 1x,
                   ./images/heart-14@2x.png 2x"
           src="./images/heart-14.png"
           alt="The little orange heart"/>
-        <button class="footer__developed-btn" type="button">by GoIT Students</button>
+          <p class="footer__developed-text footer__developed-text--withBtn">by 
+            <button class="footer__developed-btn" type="button">GoIT Students</button>
+          </p>
         <!-- modal window -->
+      </div>
       </div>
     </div>
    </footer>
