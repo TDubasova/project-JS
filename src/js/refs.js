@@ -3,4 +3,4 @@ const refs = {
 }
 
     
-export default { refs };
+export default refs;
