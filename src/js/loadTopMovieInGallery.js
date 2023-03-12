@@ -1,7 +1,7 @@
 import ApiService from './newApiService';
 import { genresList } from './jenresList';
 import clearGalleryContainer from './clearGalleryConreiner';
-import drawMovieCard from './drowMovieCard';
+import drawMovieCard from './drawMovieCard';
 
 const apiService = new ApiService();
 

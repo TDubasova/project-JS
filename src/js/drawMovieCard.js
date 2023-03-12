@@ -5,6 +5,7 @@ import movieGenreId from './movieGenreId';
 import constants from './constants';
 
 const { galleryConteiner } = refs;
+
 const { POSTER_URL } = constants;
 
 const apiService = new ApiService();
