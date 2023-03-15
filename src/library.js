@@ -1,3 +1,2 @@
-import './js/newApiService.js';
+import './js/apiService.js';
 import './js/refs.js';
-import './js/pagination';

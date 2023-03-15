@@ -2,12 +2,13 @@ import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
 const options = {
-        totalItems: 500,
-        itemsPerPage: 10,
-        visiblePages: 5
+        usageStatistics: false,
+        totalItems: 2000,
+        itemsPerPage: 20,
+        visiblePages: 5,
+        centerAlign: true,
 };
 
 const pagination = new Pagination('pagination', options);
 
-
-
+export default pagination;
