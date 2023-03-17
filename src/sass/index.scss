@@ -1,4 +1,5 @@
 @import './utils/common';
+@import './utils/variables';
 @import './components/header-common';
 @import './components/header-background';
 @import './components/header-library';
@@ -6,3 +7,4 @@
 @import './components/pagination';
 @import '../../node_modules/tui-pagination/dist/tui-pagination.css';
 @import './components/footer';
+@import './components/modal-window';

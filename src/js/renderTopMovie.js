@@ -1,10 +1,10 @@
 import refs from './refs';
-import { genresList } from './jenresList';
+import { genresList } from './genresList';
 import clearGalleryContainer from './clearGalleryConreiner';
 import movieGenreId from './movieGenreId';
 import constants from './constants';
 import renderReleasDate from './release-date';
-import renderDefaultPoster from './render-default-poster';
+import renderDefaultPoster from './renderDefaultPoster';
 
 const { galleryConteiner } = refs;
 
@@ -12,14 +12,12 @@ const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function renderTopMovie(response) {
     clearGalleryContainer();
-    
   const data = response.data.results;
   const markup = data
     .map(
       ({ id, poster_path, release_date, genre_ids, original_title }) =>
         `<div class="movie__card">
-            <a href="" class="movie__link js-movie-link" id='${id}'>
-                <img class="movie__img"
+                <img class="movie__img" id='${id}'
                 srsset='${POSTER_URL_1x}/${poster_path} 1x,
                         ${POSTER_URL_2x}/${poster_path} 2x'
                 src='${renderDefaultPoster(poster_path)}'
@@ -30,13 +28,13 @@ function renderTopMovie(response) {
                   genre_ids,
                   genresList
                 )} | ${renderReleasDate(release_date)}</p>
-            </a>
-        </div>`
+          </div>`
     )
     .join('');
+  
   galleryConteiner.insertAdjacentHTML('beforeend', markup);
+  
 }
-
 
 
 export default renderTopMovie;

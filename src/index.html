@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./sass/index.css" />
     <script type="module" src="./index.js"></script>
   </head>
+
   <body>
    <header class="header header-home">
     <section class="conteiner header-conteiner">
@@ -41,6 +42,7 @@
    <main>
     <section class="conteiner gallery">
       <h1 class="gallery__title title--hidden">Gallery of movies</h1>
+
       <div class="movie__set js-movie-set">
       </div>
 
@@ -66,5 +68,47 @@
       </div>
     </div>
    </footer>
+
+  <div class="backdrop js-backdrop is-hidden">
+    <div class="modal__window js-modal-window">
+
+      <div class="modal__header">
+        <div class="modal__conteiner">
+          <a class="header__logo header__logo--link header__logo-modal" href="./index.html">
+            <img class="header__logo-img" 
+              srcset="./images/logo-modal-24@1x.png 1x,
+                      ./images/logo-modal-24@1x.png 2x"
+              src='./images/logo-modal-24@1x.png'
+              alt="Filmoteka website logo as a piece of film"/>
+          </a>
+          <button type="button" class="modal-header__close-btn js-modal-header-close">
+            <svg class="btn-header__icon" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 10L34 34" stroke="white" stroke-width="2"/>
+              <path d="M10 34L34 10" stroke="white" stroke-width="2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="button" class="modal__close-btn js-modal-close">
+        <svg class="btn__icon" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 8L22 22" stroke="black" stroke-width="2"/>
+          <path d="M8 22L22 8" stroke="black" stroke-width="2"/>
+          </svg>
+      </button>
+        
+      <div class="modal__conteiner modal__movie-conteiner js-modal-window-movie-conteiner">
+      </div>
+      <div class="modal-window__btns">
+      <button class="modal__btn modal__btn--watched js-modal-btn-watched">add to Watched</button>
+      <button class="modal__btn modal__btn--queue js-modal-btn-queue">add to queue</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="lv-bars lg lv-mid lvt-5 lvb-3" data-label="Loading..."></div>
+  <div class="lv-determinate_circle md lv-right lvt-5 lvb-1" data-label="Loading..." data-percentage="true"></div>
+  
   </body>
 </html>

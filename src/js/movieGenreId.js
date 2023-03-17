@@ -1,4 +1,4 @@
-import { genresList } from './jenresList';
+import { genresList } from './genresList';
 
 export default function movieGenreId(genre_ids, genresList) {
   const arrayGenreName = [];
