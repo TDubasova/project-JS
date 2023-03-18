@@ -18,7 +18,8 @@ const getSearchMovie = (event) => {
         fetchTopMovie();
         return;
     } else {
-        fetchSearchMovie(page = 1, value);
+        const page = 1;
+        fetchSearchMovie(page, value);
         localStorage.setItem('query', event.currentTarget.elements.searchQuery.value);
         pagination.reset();
     }
