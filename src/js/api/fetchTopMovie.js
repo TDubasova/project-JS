@@ -4,24 +4,14 @@ import renderTopMovie from '../renderTopMovie';
 
 const { TOP_MOVIE_URL, API_KEY} = constants;
 
-export async function fetchTopMovie() {
-    let url = TOP_MOVIE_URL;
-    const config = {
-        params: {
-            api_key: `${API_KEY}`,
-            language: 'uk-US',
-            page: '1',
-        },
-    };
-    try {
-        const response = await axios.get(url, config);
-
+export function fetchTopMovie() {
+    axios.get(`${TOP_MOVIE_URL}?api_key=${API_KEY}&language=uk-US&page=1`)
+    .then(function (response) {
         renderTopMovie(response);
-    }
-    catch (error) {
-        console.log(error);
-        return Promise.reject(error);
-    } 
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
 }
 
 export default fetchTopMovie;
