@@ -1,7 +1,7 @@
 import fetchModalWindow from './fetchModalWindow';
 import refs from '../../js/refs';
 
-const { modalBackdrop, closeModalBtn, closeModalHeaderBtn, movieSet, modalWindow } = refs;
+const { modalBackdrop, closeModalBtn, closeModalHeaderBtn, movieSet } = refs;
 
 function modalBackdropToggle() {
     modalBackdrop.classList.toggle("is-hidden");
