@@ -6,8 +6,8 @@ import refs from '../../js/refs';
 
 const { searchForm } = refs;
 
-async function loadTopMovies() {
-    await fetchTopMovie(page = 1);
+function loadTopMovies() {
+    fetchTopMovie();
     localStorage.removeItem("query");
 }
 
@@ -15,7 +15,7 @@ const getSearchMovie = (event) => {
     event.preventDefault();
     let value = event.currentTarget.elements.searchQuery.value;
     if (value === undefined) {
-        fetchTopMovie(page = 1);
+        fetchTopMovie();
         return;
     } else {
         fetchSearchMovie(page = 1, value);
