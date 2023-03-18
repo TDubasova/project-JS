@@ -6,26 +6,15 @@ const { API_KEY, SEARCH_MOVIE_URL } = constants;
 
  
 
-export async function fetchSearchMovie(page, searchValue) {
-    const url = SEARCH_MOVIE_URL;
-    const config = {
-        params: {
-            api_key: `${API_KEY}`,
-            language: 'uk-US',
-            query: `${searchValue}`, 
-            page: `${page}`,
-        },
-    };
-    try {
-        const response = await axios.get(url, config);
-        
+export function fetchSearchMovie(page, searchValue) {
+    axios.get(`${SEARCH_MOVIE_URL}?api_key=${API_KEY}&query=${searchValue}&page=${page}`)
+    .then(function (response) {
         renderTopMovie(response);
-        
-    }
-    catch (error) {
-        console.log(error);
-        return Promise.reject(error);
-    } 
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
 }
+
 
 export default fetchSearchMovie;
