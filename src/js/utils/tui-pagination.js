@@ -9,35 +9,35 @@ const { inputSearchForm } = refs;
 inputSearchForm.addEventListener('input', onInputSearchFormInput);
 
 function onInputSearchFormInput(event) {
-        let value = event.target.value;
-        return value;
+  let value = event.target.value;
+  return value;
 }
 
 const options = {
-        usageStatistics: false,
-        totalItems: 2000,
-        itemsPerPage: 20,
-        visiblePages: 5,
-        centerAlign: true,
+  usageStatistics: false,
+  totalItems: 2000,
+  itemsPerPage: 20,
+  visiblePages: 5,
+  centerAlign: true,
 };
 
 const pagination = new Pagination('pagination', options);
 
 pagination.on('afterMove', () => {
-        window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-        });
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 });
 
 pagination.on('beforeMove', (event, value) => {
-        let page = event.page;
-        if (localStorage.getItem('query') === null) {
-                fetchTopMovieNext(page);
-        } else {
-                value = localStorage.getItem('query');
-                fetchSearchMovie(page, value);
-        } 
+  let page = event.page;
+  if (localStorage.getItem('query') === null) {
+    fetchTopMovieNext(page);
+  } else {
+    value = localStorage.getItem('query');
+    fetchSearchMovie(page, value);
+  }
 });
 
 export default pagination;
