@@ -18,7 +18,7 @@ const getSearchMovie = (event) => {
         fetchTopMovie();
         return;
     } else {
-        const page = 1;
+        let page = 1;
         fetchSearchMovie(page, value);
         localStorage.setItem('query', event.currentTarget.elements.searchQuery.value);
         pagination.reset();

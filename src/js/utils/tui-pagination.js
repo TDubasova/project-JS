@@ -31,7 +31,7 @@ pagination.on('afterMove', () => {
 });
 
 pagination.on('beforeMove', (event, value) => {
-        const page = event.page;
+        let page = event.page;
         if (localStorage.getItem('query') === null) {
                 fetchTopMovieNext(page);
         } else {
