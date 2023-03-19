@@ -20,11 +20,12 @@ function markupMovieTreiler(response) {
     const markupVideo = [
             `<iframe
                 class='film__trailer'
-                width="375"
-                height="478"
                 src='https://www.youtube.com/embed/${key}'
                 title='YouTube video player'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                height='374px'
+                width='100%'
+                style='border:none;'
                 allowfullscreen
             ></iframe>`
     ].join('');

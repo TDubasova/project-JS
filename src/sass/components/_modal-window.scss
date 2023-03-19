@@ -139,6 +139,10 @@
 
 .modal-img__conteiner {
     width: 280px;
+    
+    @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+    }
 
     @media screen and (min-width: 768px) {
         width: 264px;
@@ -279,6 +283,22 @@
     &.is-hidden{
         display: none;
     }
+}
+
+iframe {
+    width: 280px;
+    height: 416px;
+
+    @media screen and (min-width: 768px) {
+        width: 264px;
+        height: 374px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 375px;
+        height: 478px;
+    }
+   
 }
 
 .movie-info__about {

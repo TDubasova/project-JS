@@ -789,6 +789,11 @@ ul {
 .modal-img__conteiner {
   width: 280px;
 }
+@media screen and (max-width: 767px) {
+  .modal-img__conteiner {
+    margin-bottom: 30px;
+  }
+}
 @media screen and (min-width: 768px) {
   .modal-img__conteiner {
     width: 264px;
@@ -937,6 +942,23 @@ ul {
 }
 .modal__request-video.is-hidden {
   display: none;
+}
+
+iframe {
+  width: 280px;
+  height: 416px;
+}
+@media screen and (min-width: 768px) {
+  iframe {
+    width: 264px;
+    height: 374px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  iframe {
+    width: 375px;
+    height: 478px;
+  }
 }
 
 .movie-info__about {
