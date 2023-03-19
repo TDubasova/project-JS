@@ -6,7 +6,7 @@ const { TOP_MOVIE_URL, API_KEY } = constants;
 
 async function fetchTopMovieNext(page) {
   await axios
-    .get(`${TOP_MOVIE_URL}?api_key=${API_KEY}&language=uk-US&page=${page}`)
+    .get(`${TOP_MOVIE_URL}?api_key=${API_KEY}&language=uk-US&page=${page}&adult=false`)
     .then(function (response) {
       renderTopMovie(response);
     })

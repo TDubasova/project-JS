@@ -24,7 +24,7 @@ const getSearchMovie = event => {
       'query',
       event.currentTarget.elements.searchQuery.value
     );
-    pagination.reset();
+    pagination.reset(1000);
   }
   return value;
 };

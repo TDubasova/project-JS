@@ -3,6 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import fetchTopMovieNext from '../api/fetchTopMovieNext';
 import fetchSearchMovie from '../api/fetchSearchMovie';
 import refs from '../refs';
+import { loadingShow, loadingRemove } from '../utils/loading';
 
 const { inputSearchForm } = refs;
 
@@ -33,10 +34,14 @@ pagination.on('afterMove', () => {
 pagination.on('beforeMove', (event, value) => {
   let page = event.page;
   if (localStorage.getItem('query') === null) {
+    loadingShow();
     fetchTopMovieNext(page);
+    loadingRemove();
   } else {
     value = localStorage.getItem('query');
+    loadingShow();
     fetchSearchMovie(page, value);
+    loadingRemove();
   }
 });
 

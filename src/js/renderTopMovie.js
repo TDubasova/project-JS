@@ -6,12 +6,14 @@ import constants from './constants';
 import renderReleasDate from './release-date';
 import renderDefaultPoster from './renderDefaultPoster';
 
+
 const { galleryConteiner } = refs;
 
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function renderTopMovie(response) {
   clearGalleryContainer();
+  
   const data = response.data.results;
   const markup = data
     .map(
@@ -31,8 +33,9 @@ function renderTopMovie(response) {
           </div>`
     )
     .join('');
-
+  
   galleryConteiner.insertAdjacentHTML('beforeend', markup);
+  
 }
 
 export default renderTopMovie;

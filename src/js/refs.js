@@ -12,6 +12,10 @@ const refs = {
   movieSet: document.querySelector('.js-movie-set'),
   movieCard: document.querySelector('.movie__card'),
   modalWindow: document.querySelector('.js-modal-window'),
+  modalImgConteiner: document.querySelector('.js-modal-img-conteiner'),
+  modalMovieInfo: document.querySelector('.js-modal-movie-info'),
+  modalImg: document.querySelector('.modal__img'),
+
 };
 
 export default refs;

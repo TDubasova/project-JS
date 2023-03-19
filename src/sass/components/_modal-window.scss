@@ -77,7 +77,7 @@
 
     @media screen and (min-width: 768px) {
         padding-left: 32px;
-        padding-right: 32px;
+        padding-right: 72px;
     }
 
     @media screen and (min-width: 1280px) {
@@ -132,11 +132,20 @@
     }
     @media screen and (min-width: 768px) {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         padding-top: 40px; 
     }
-    @media screen and (min-width: 768px) and (max-width: 1279px) {
-        margin-bottom: 55px;
+}
+
+.modal-img__conteiner {
+    width: 280px;
+
+    @media screen and (min-width: 768px) {
+        width: 264px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 375px;
     }
 }
 
@@ -145,10 +154,6 @@
     height: 416px;
     margin: 0 auto;
     border-radius: 5px;
-
-    @media screen and (max-width: 767px) {
-        margin-bottom: 30px;
-    }
 
     @media screen and (min-width: 768px) {
         width: 264px;
@@ -160,12 +165,28 @@
     @media screen and (min-width: 1280px) {
         width: 375px;
         height: 478px;
-        margin-right: 16px;
+    }
+}
+
+.modal-info__conteiner {
+    @media screen and (min-width: 768px) {
+        display: block;
+        width: 264px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 391px;
     }
 }
 
 .modal-window__movie-info {
+    margin-bottom: 40px;
     text-align: left;
+
+    @media screen and (min-width: 768px) {
+        max-height: 464px;
+        margin-bottom: 20px;
+    }
 }
 
 .modal-window__title {
@@ -173,18 +194,10 @@
     font-weight: 500;
     font-size: 20px;
     text-transform: uppercase;
-
-    @media screen and (min-width: 768px) {
-        max-width: 264px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        max-width: 426px;
-    }
 }
 
 .movie-info__list {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .movie-info__item {
@@ -237,6 +250,35 @@
     max-width: 173px;
     text-transform: uppercase;
     line-height: 1.14;
+
+    @media screen and (min-width: 768px) {
+        max-width: 108px;
+    }
+}
+
+.modal__request-video {
+    width: 108px;
+    height: 30px;
+    border: none;
+    padding: 0;
+    background-color: inherit;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #FF6B01;
+    line-height: 1.14;
+
+    @media screen and (min-width: 1280px) {
+        width: 152px;
+    }
+
+    &:hover {
+        color: #FF001B;
+    }
+    
+    &.is-hidden{
+        display: none;
+    }
 }
 
 .movie-info__about {
@@ -250,32 +292,19 @@
     line-height: 1.42;
 
    @media screen and (min-width: 768px) {
-        width: 264px;
-        height: 141px;
-        overflow: scroll;
+        max-height: 150px;
+        overflow: auto;
    }
 
    @media screen and (min-width: 1280px) {
-        width: 391px;
-        height: 160px;
-        overflow: scroll;
+        max-height: 160px;
+        overflow: auto;
    }
 }
 
-.modal-window__btns {
+.modal-conteiner__btns {
     display: flex;
     justify-content: center;
-
-    @media screen and (min-width: 768px) {
-        margin-left: 367px;
-        justify-content: flex-start;
-        padding: 0;
-    }
-    @media screen and (min-width: 1280px) {
-        position: absolute;
-        bottom: 111px;
-        left: 32px;
-    }
 }
 
 .modal__btn {
