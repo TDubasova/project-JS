@@ -8,7 +8,7 @@ const { libraryConteinerQueue } = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 export function renderLibraryQueue(data) {
-  clearGalleryContainer();
+  libraryConteinerQueue.innerHTML = '';
   const marcupMovieWatch = data
     .map(
       ({ id, poster_path, release_date, genres, original_title }) =>

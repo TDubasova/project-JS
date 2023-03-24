@@ -8,7 +8,7 @@ const { libraryConreinerWatched } = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function renderLibraryWatch(data) {
-  clearGalleryContainer();
+  libraryConreinerWatched.innerHTML = '';
   const marcupMovieWatch = data
     .map(
       ({ id, poster_path, release_date, genres, original_title }) =>
