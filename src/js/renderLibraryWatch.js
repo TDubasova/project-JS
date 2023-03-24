@@ -2,11 +2,13 @@ import refs from './refs';
 import constants from './constants';
 import renderReleasDate from './release-date';
 import renderDefaultPoster from './renderDefaultPoster';
+import clearGalleryContainer from './clearGalleryConreiner';
 
 const { libraryConreinerWatched } = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function renderLibraryWatch(data) {
+  clearGalleryContainer();
   const marcupMovieWatch = data
     .map(
       ({ id, poster_path, release_date, genres, original_title }) =>
