@@ -5,7 +5,7 @@ const { modalImgConteiner } = refs;
 
 function renderMovieTreiler(response) {
     const requestVideo = document.querySelector('.modal__request-video');
-    if (response.data.videos.results.length === 0) {
+    if (response.data.results.length === 0) {
         requestVideo.classList.add('is-hidden');
         const message = 'Sorry, there is no trailer to watch!'
         notifyFilure(message);
@@ -16,7 +16,7 @@ function renderMovieTreiler(response) {
 }
 
 function markupMovieTreiler(response) {
-    const key = response.data.videos.results[0].key;    
+    const key = response.data.results[0].key;    
     const markupVideo = [
             `<iframe
                 class='film__trailer'
@@ -25,7 +25,7 @@ function markupMovieTreiler(response) {
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                 height='374px'
                 width='100%'
-                style='border:none;'
+                style='border:none; border-radius:5px;'
                 allowfullscreen
             ></iframe>`
     ].join('');

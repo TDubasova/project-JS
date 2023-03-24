@@ -1,6 +1,6 @@
 import axios from 'axios';
 import constants from '../../js/constants';
-import renderTopMovie from '../../js/renderTopMovie';
+import renderSearchMovie from '../../js/renderSearchMovie';
 import { loadingShow, loadingRemove } from '../utils/loading';
 
 const { API_KEY, SEARCH_MOVIE_URL } = constants;
@@ -12,8 +12,9 @@ async function fetchSearchMovie(page, searchValue) {
       `${SEARCH_MOVIE_URL}?api_key=${API_KEY}&query=${searchValue}&page=${page}&adult=false`
     )
     .then(function (response) {
-      renderTopMovie(response);
-      loadingRemove();
+      localStorage.setItem('totalPage', response.data.total_pages);
+        renderSearchMovie(response);
+        loadingRemove();
     })
     .catch(function (error) {
       console.log(error);

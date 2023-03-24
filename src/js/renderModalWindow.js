@@ -3,24 +3,49 @@ import constants from './constants';
 import renderDefaultPoster from './renderDefaultPoster';
 import fetchMovieTreiler from './api/fetchMovieTreiler';
 import renderDefaultOverview from './renderDefaultOverview';
+import {notifyInfo} from './utils/notify'
+import { watched, queue, setWatchedLocalStoradge, setQueueLocalStoradge } from './localStorageService';
 
-const { modalImgConteiner, modalMovieInfo } = refs;
-
+const { modalImgConteiner, modalMovieInfo, modalBtnWatched, modalBtnQueue } = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function onRequestVideoClick(event) {
   const currentTargetElement = event.target;
   const id = Number(currentTargetElement.getAttribute('id'));
   fetchMovieTreiler(id);
-  console.log(currentTargetElement)
-  console.log(id)
+}
+
+function onModalBtnWatchedClick() {
+  const id = localStorage.getItem('id');
+  if (!watched.includes(id)) {
+    watched.push(id);
+    setWatchedLocalStoradge(watched);
+    const message = 'This movie was added to the collection of WATCHED films';
+    notifyInfo(message);
+    modalBtnWatched.disabled = true;
+    modalBtnWatched.style.backgroundColor = '#808080';
+  }
+} 
+
+function onModalBtnQueueClick() {
+  const id = localStorage.getItem('id');
+    
+  if (!queue.includes(id)) {
+    queue.push(id);
+    setQueueLocalStoradge(queue);
+    const message = 'This movie has been added to the movie QUEUE';
+    notifyInfo(message);
+    modalBtnQueue.disabled = true;
+    modalBtnQueue.style.backgroundColor = '#808080';
+    modalBtnQueue.style.color = '#FFFFFF';
+  }
 }
 
 function renderModalWindow(response) {
   modalImgConteiner.innerHTML = '';
   modalMovieInfo.innerHTML = '';
+
   const data = response.data;
-  console.log(response.data)
   const {
     id,
     original_title,
@@ -30,6 +55,9 @@ function renderModalWindow(response) {
     vote_average,
     vote_count,
   } = data;
+  
+  const setMovieId = localStorage.setItem('id', data.id);
+
   const genres = [];
   data.genres.map(element => genres.push(element.name));
   const markupImg = [
@@ -70,9 +98,30 @@ function renderModalWindow(response) {
   ].join('');
   modalMovieInfo.insertAdjacentHTML('afterbegin', marcupMivieInfo);
 
-  const requestVideo = document.querySelector('.modal__request-video')
-  requestVideo.addEventListener('click', onRequestVideoClick)
-}
+  const getMovieId = localStorage.getItem('id');
 
+  if (watched.includes(getMovieId)) {
+    modalBtnWatched.disabled = true;
+    modalBtnWatched.style.backgroundColor = '#808080';
+  } else {
+    modalBtnWatched.disabled = false;
+    modalBtnWatched.style.backgroundColor = '#FF6B01';
+  }
+
+  if (queue.includes(getMovieId)) {
+    modalBtnQueue.disabled = true;
+    modalBtnQueue.style.backgroundColor = '#808080';
+  } else {
+    modalBtnQueue.disabled = false;
+    modalBtnQueue.style.backgroundColor = '#FFFFFF';
+    modalBtnQueue.style.color = '#000000';
+  }
+
+  const requestVideo = document.querySelector('.modal__request-video');
+  requestVideo.addEventListener('click', onRequestVideoClick);
+
+  modalBtnWatched.addEventListener('click', onModalBtnWatchedClick);
+  modalBtnQueue.addEventListener('click', onModalBtnQueueClick);
+}
 
 export default renderModalWindow;

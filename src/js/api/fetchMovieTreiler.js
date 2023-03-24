@@ -8,7 +8,7 @@ const { API_KEY, MODAL_WINDOW_URL } = constants;
 async function fetchMovieTreiler(id) {
   loadingShow();
   await axios
-    .get(`${MODAL_WINDOW_URL}/${id}?api_key=${API_KEY}&append_to_response=videos&language=uk-US`)
+    .get(`${MODAL_WINDOW_URL}/${id}/videos?api_key=${API_KEY}`)
     .then(function (response) {
       renderMovieTreiler(response);
       loadingRemove();

@@ -3,7 +3,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import fetchTopMovieNext from '../api/fetchTopMovieNext';
 import fetchSearchMovie from '../api/fetchSearchMovie';
 import refs from '../refs';
-import { loadingShow, loadingRemove } from '../utils/loading';
+import { notifyFilure } from '../utils/notify';
 
 const { inputSearchForm } = refs;
 
@@ -14,10 +14,12 @@ function onInputSearchFormInput(event) {
   return value;
 }
 
+const Pagination = require('tui-pagination');
+
 const options = {
   usageStatistics: false,
-  totalItems: 2000,
-  itemsPerPage: 20,
+  itemsPerPage: 10,
+  totalItems: 1000000,
   visiblePages: 5,
   centerAlign: true,
 };
@@ -32,16 +34,18 @@ pagination.on('afterMove', () => {
 });
 
 pagination.on('beforeMove', (event, value) => {
+  const totalPage = Number(localStorage.getItem('totalPage'));
   let page = event.page;
-  if (localStorage.getItem('query') === null) {
-    loadingShow();
-    fetchTopMovieNext(page);
-    loadingRemove();
+  if (page > totalPage) {
+    const message = 'Oops... you got to the end of the list';
+    notifyFilure(message);    
   } else {
-    value = localStorage.getItem('query');
-    loadingShow();
-    fetchSearchMovie(page, value);
-    loadingRemove();
+    if (localStorage.getItem('query') === null) {
+      fetchTopMovieNext(page);
+    } else {
+      value = localStorage.getItem('query');
+      fetchSearchMovie(page, value);
+    }
   }
 });
 

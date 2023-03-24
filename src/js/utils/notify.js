@@ -52,4 +52,8 @@ export function notifyFilure(message) {
     Notify.failure(message);
 }
 
+export function notifyInfo(message) {
+    Notify.info(message);
+}
+
 

@@ -1,0 +1,35 @@
+.gallery__main.is-hidden {
+    display: none;
+}
+
+.watched,
+.queue {
+    padding-top: 250px;
+    background-color: #FFFFFF;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 279px;
+    }
+}
+
+.watched.is-hidden,
+.queue.is-hidden {
+    display: none;
+}
+
+.watched__set,
+.queue__set {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        gap: 16px;
+    }
+}

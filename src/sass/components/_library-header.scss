@@ -1,28 +1,5 @@
-.header-home {
-    background-color: #FFFFFF;
-    background-image:
-        linear-gradient(to right,
-            rgba(0, 0, 0, 0.56),
-            rgba(0, 0, 0, 0.56)),
-        url(../images/background-320@1x.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    @media screen and (min-width: 768px) {
-        background-image:
-            linear-gradient(to right,
-                rgba(0, 0, 0, 0.56),
-                rgba(0, 0, 0, 0.56)),
-            url(../images/background-768@1x.jpg);
-    }
-
-    @media screen and (min-width: 1280px) {
-        background-image:
-            linear-gradient(to right,
-                rgba(0, 0, 0, 0.56),
-                rgba(0, 0, 0, 0.56)),
-            url(../images/background-1280@1x.jpg);
-    }
+.is-hidden {
+    display: none;
 }
 
 .header-library {
@@ -57,32 +34,7 @@
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi),
 (min-resolution: 2dppx) {
-    .header {
-        background-image:
-            linear-gradient(to right,
-                rgba(0, 0, 0, 0.56),
-                rgba(0, 0, 0, 0.56)),
-            url(../images/background-320@2x.png);
-
-        @media screen and (min-width: 768px) {
-            background-image:
-                linear-gradient(to right,
-                    rgba(0, 0, 0, 0.56),
-                    rgba(0, 0, 0, 0.56)),
-                url(../images/background-768@2x.jpg);
-        }
-
-        @media screen and (min-width: 1280px) {
-            background-image:
-                linear-gradient(to right,
-                    rgba(0, 0, 0, 0.56),
-                    rgba(0, 0, 0, 0.56)),
-                url(../images/background-1280@2x.jpg);
-        }
-
-    }
-
-        .header-library {
+    .header-library {
             background-image:
                 linear-gradient(to right,
                     rgba(0, 0, 0, 0.56),
@@ -106,4 +58,54 @@
             }
     
         }
+    }
+
+.header-library__menu {
+
+    @media screen and (max-width: 767px) {
+        margin-bottom: 66px;
+    }
 }
+
+.header-library__wrap {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+        justify-content: center;
+    }
+}
+
+.header-library__btn {
+    display: block;
+    width: 130px;
+    height: 44px;
+    padding: 0px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    background-color: inherit;
+    color: #FFFFFF;
+
+    @media screen and (min-width: 768px) {
+        width: 152px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: #FF6B01;
+        box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
+    }
+
+    &:first-child {
+        @media screen and (min-width: 768px) {
+            margin-right: 32px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            margin-right: 16px;
+        }
+    }
+
+}
+

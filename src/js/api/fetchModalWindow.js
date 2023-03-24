@@ -8,7 +8,7 @@ const { API_KEY, MODAL_WINDOW_URL } = constants;
 async function fetchModalWindow(id) {
   loadingShow();
   await axios
-    .get(`${MODAL_WINDOW_URL}/${id}?api_key=${API_KEY}&language=uk-US`)
+    .get(`${MODAL_WINDOW_URL}/${id}?api_key=${API_KEY}`)
     .then(function (response) {
       renderModalWindow(response);
       loadingRemove();
