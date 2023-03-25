@@ -2,7 +2,7 @@
     background-color: #F7F7F7;
 }
 
-.footer-conteiner {
+.footer-container {
     height: 100px;
     
     @media screen and (min-width: 768px) {
@@ -21,7 +21,7 @@
     margin: 0 auto;
     padding-top: 29px;
     text-align: center;
-    color: #545454;
+    color: $footerTextColor;
     font-weight: 400;
     font-size: 14px;
 
@@ -38,7 +38,6 @@
     @media screen and (max-width: 767px) {
         margin-bottom: 10px;
     }
-    
 }
 
 .footer__developed {
@@ -68,7 +67,7 @@
     border: none;
     padding: 0;
     background-color: inherit;
-    color: #545454;
+    color: $footerTextColor;
     font-weight: inherit;
     font-size: inherit;
     line-height: inherit;

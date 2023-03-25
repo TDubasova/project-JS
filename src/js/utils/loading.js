@@ -1,9 +1,5 @@
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
-// Loading.hourglass('Loading...', {
-// backgroundColor: 'rgba(0,0,0,0.8)',
-// });
-
 Loading.init({
 className: 'notiflix-loading',
 zindex: 4000,

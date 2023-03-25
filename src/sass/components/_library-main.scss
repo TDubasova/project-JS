@@ -2,16 +2,18 @@
     display: none;
 }
 
+.library__not-movie,
 .watched,
 .queue {
     padding-top: 250px;
-    background-color: #FFFFFF;
+    background-color: $primaryColor;
 
     @media screen and (min-width: 768px) {
         padding-top: 279px;
     }
 }
 
+.library__not-movie.is-hidden,
 .watched.is-hidden,
 .queue.is-hidden {
     display: none;
@@ -32,4 +34,9 @@
     @media screen and (min-width: 1280px) {
         gap: 16px;
     }
+}
+
+.library__message-not-movie {
+    font-size: 56px;
+    color: $buttonColor;
 }

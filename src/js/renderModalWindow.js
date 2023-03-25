@@ -3,10 +3,13 @@ import constants from './constants';
 import renderDefaultPoster from './renderDefaultPoster';
 import fetchMovieTreiler from './api/fetchMovieTreiler';
 import renderDefaultOverview from './renderDefaultOverview';
-import {notifyInfo} from './utils/notify'
-import { watched, queue, setWatchedLocalStoradge, setQueueLocalStoradge } from './localStorageService';
+import fetchLibraryQueue from './api/fetchLibraryQueue';
+import fetchLibraryWatch from './api/fetchLibraryWatch';
+import { notifyInfo } from './utils/notify';
+import { addWatched, removeWatched, addQueue, removeQueue } from './message-list';
+import { watched, queue, setWatchedLocalStoradge, setQueueLocalStoradge, getQueueLocalStoradge, getWatchedLocalStoradge } from './localStorageService';
 
-const { modalImgConteiner, modalMovieInfo, modalBtnWatched, modalBtnQueue } = refs;
+const { modalImgContainer, modalMovieInfo, modalBtnWatched, modalBtnQueue, librarySectionQueue, librarySectionWatched } = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function onRequestVideoClick(event) {
@@ -15,34 +18,85 @@ function onRequestVideoClick(event) {
   fetchMovieTreiler(id);
 }
 
-function onModalBtnWatchedClick() {
+function btnTransformIfMovieAddToWatched() {
+  if (!modalBtnWatched.classList.contains('is-active')) {
+    modalBtnWatched.textContent = 'remove from watched';
+    modalBtnWatched.classList.add('is-active');
+  } else {
+    return;
+  }
+}
+
+function btnTransformIfMovieRomoveFromWatched() {
+  if (modalBtnWatched.classList.contains('is-active')) {
+    modalBtnWatched.classList.remove('is-active');
+    modalBtnWatched.textContent = 'add to watched';
+  } else {
+    return;
+  }
+}
+
+function btnTransformIfMovieAddToQueue() {
+  if (!modalBtnQueue.classList.contains('is-active')) {
+    modalBtnQueue.textContent = 'remove from queue';
+    modalBtnQueue.classList.add('is-active');
+  } else {
+    return;
+  }
+}
+
+function btnTransformIfMovieRemovFromQueue() {
+  if (modalBtnQueue.classList.contains('is-active')) {
+    modalBtnQueue.classList.remove('is-active');
+    modalBtnQueue.textContent = 'add to queue';
+  };
+}
+
+function onModalBtnWatchedClick(e) {
   const id = localStorage.getItem('id');
   if (!watched.includes(id)) {
     watched.push(id);
     setWatchedLocalStoradge(watched);
-    const message = 'This movie was added to the collection of WATCHED films';
-    notifyInfo(message);
-    modalBtnWatched.disabled = true;
-    modalBtnWatched.style.backgroundColor = '#808080';
+    notifyInfo(addWatched);
+    btnTransformIfMovieAddToWatched(e)
+  }
+  else {
+    watched.splice(watched.indexOf(id), 1);
+    setWatchedLocalStoradge(watched);
+    notifyInfo(removeWatched);
+    btnTransformIfMovieRomoveFromWatched(e);
+    if (!librarySectionWatched.classList.contains('is-hidden')) {
+      const watchedIdArr = getWatchedLocalStoradge();
+      fetchLibraryWatch(watchedIdArr);
+    } else {
+      return;
+    }
   }
 } 
 
-function onModalBtnQueueClick() {
+function onModalBtnQueueClick(e) {
   const id = localStorage.getItem('id');
-    
   if (!queue.includes(id)) {
     queue.push(id);
     setQueueLocalStoradge(queue);
-    const message = 'This movie has been added to the movie QUEUE';
-    notifyInfo(message);
-    modalBtnQueue.disabled = true;
-    modalBtnQueue.style.backgroundColor = '#808080';
-    modalBtnQueue.style.color = '#FFFFFF';
+    notifyInfo(addQueue);
+    btnTransformIfMovieAddToQueue(e);
+  } else {
+    queue.splice(queue.indexOf(id), 1);
+    setQueueLocalStoradge(queue);
+    notifyInfo(removeQueue);
+    btnTransformIfMovieRemovFromQueue(e);
+    if (!librarySectionQueue.classList.contains('is-hidden')) {
+      const queueIdArr = getQueueLocalStoradge();
+      fetchLibraryQueue(queueIdArr);
+    } else {
+      return;
+    }
   }
 }
 
 function renderModalWindow(response) {
-  modalImgConteiner.innerHTML = '';
+  modalImgContainer.innerHTML = '';
   modalMovieInfo.innerHTML = '';
 
   const data = response.data;
@@ -68,7 +122,7 @@ function renderModalWindow(response) {
                 loading="lazy"
                 alt="movie's poster">`,
   ].join('');
-  modalImgConteiner.insertAdjacentHTML('afterbegin', markupImg);
+  modalImgContainer.insertAdjacentHTML('afterbegin', markupImg);
   
   const marcupMivieInfo = [
     `<h1 class="modal-window__title">${original_title}</h1>
@@ -101,20 +155,20 @@ function renderModalWindow(response) {
   const getMovieId = localStorage.getItem('id');
 
   if (watched.includes(getMovieId)) {
-    modalBtnWatched.disabled = true;
-    modalBtnWatched.style.backgroundColor = '#808080';
+    modalBtnWatched.textContent = 'remove from watched';
+    modalBtnWatched.classList.add('is-active');
   } else {
-    modalBtnWatched.disabled = false;
-    modalBtnWatched.style.backgroundColor = '#FF6B01';
+    modalBtnWatched.textContent = 'add to watched';
+    modalBtnWatched.classList.remove('is-active');
+
   }
 
   if (queue.includes(getMovieId)) {
-    modalBtnQueue.disabled = true;
-    modalBtnQueue.style.backgroundColor = '#808080';
+    modalBtnQueue.textContent = 'remove from queue';
+    modalBtnQueue.classList.add('is-active');
   } else {
-    modalBtnQueue.disabled = false;
-    modalBtnQueue.style.backgroundColor = '#FFFFFF';
-    modalBtnQueue.style.color = '#000000';
+    modalBtnQueue.textContent = 'add to queue';
+    modalBtnQueue.classList.remove('is-active');
   }
 
   const requestVideo = document.querySelector('.modal__request-video');

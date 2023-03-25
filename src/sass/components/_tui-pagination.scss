@@ -34,7 +34,7 @@
 .tui-pagination .tui-ico-prev {
     width: 18px;
     height: 30px;
-    color: black;
+    color: $primaryTextColor;
 
 }
 
@@ -48,7 +48,7 @@
 
 
 .tui-pagination .tui-page-btn {
-    color: #000000;
+    color: $primaryTextColor;
     padding: 13px 11px;
 }
 
@@ -81,7 +81,7 @@
 .tui-pagination .tui-ico-next {
     vertical-align: baseline;
     background: url('../images/arrow-right.png'), no-repeat;
-    color: black;
+    color: $primaryTextColor;
     width: 16px;
     height: 16px;
 }
@@ -106,9 +106,9 @@
     text-align: center;
     border: none;
     border-radius: 5px;
-    color: #FFFFFF;
-    background: #FF6B08;
-    background-color: #FF6B08;
+    color: $primaryColor;
+    background: $buttonColor;
+    background-color: $buttonColor;
     
 }
 

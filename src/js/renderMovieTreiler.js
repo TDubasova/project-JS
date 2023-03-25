@@ -1,14 +1,14 @@
 import refs from './refs';
 import { notifyFilure } from './utils/notify';
+import { defaultTreiler } from './message-list';
 
-const { modalImgConteiner } = refs;
+const { modalImgContainer } = refs;
 
 function renderMovieTreiler(response) {
     const requestVideo = document.querySelector('.modal__request-video');
     if (response.data.results.length === 0) {
         requestVideo.classList.add('is-hidden');
-        const message = 'Sorry, there is no trailer to watch!'
-        notifyFilure(message);
+        notifyFilure(defaultTreiler);
         return;
     } else {
         markupMovieTreiler(response);
@@ -29,7 +29,7 @@ function markupMovieTreiler(response) {
                 allowfullscreen
             ></iframe>`
     ].join('');
-    modalImgConteiner.innerHTML = markupVideo;
+    modalImgContainer.innerHTML = markupVideo;
 }
 
 export default renderMovieTreiler;

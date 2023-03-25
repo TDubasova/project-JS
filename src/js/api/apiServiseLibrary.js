@@ -5,44 +5,61 @@ import fetchLibraryQueue from './fetchLibraryQueue';
 import refs from '../../js/refs';
 import { getWatchedLocalStoradge, getQueueLocalStoradge } from '../localStorageService';
 
-const { libraryBtnWatched, libraryBtnQueue, librarySectionWatched, librarySectionQueue } = refs;
+const { libraryNotMovieConteiner, libraryBtnWatched, libraryBtnQueue, librarySectionWatched, librarySectionQueue } = refs;
 
 function onLibraryBtnWatchedClick(e) {
-    btnIsActive(e);
-
-    librarySectionQueue.classList.add('is-hidden');
-    librarySectionWatched.classList.remove('is-hidden');
-
     const watchedIdArr = getWatchedLocalStoradge();
-    fetchLibraryWatch(watchedIdArr);
-    
+    btnIsActive(e);
+    if (watchedIdArr === null) {
+        console.log(watchedIdArr)
+        libraryNotMovieConteiner.classList.remove('is-hidden');
+        librarySectionWatched.classList.add('is-hidden');
+        librarySectionQueue.classList.add('is-hidden');
+    } else {
+        librarySectionQueue.classList.add('is-hidden');
+        libraryNotMovieConteiner.classList.add('is-hidden');
+        librarySectionWatched.classList.remove('is-hidden');        
+        fetchLibraryWatch(watchedIdArr);
+    }
     btnIsNotActive(libraryBtnQueue);
 }
 
 function onLibraryBtnQueueClick(e) {
-    btnIsActive(e)
-
-    librarySectionQueue.classList.remove('is-hidden');
-    librarySectionWatched.classList.add('is-hidden');
-
     const queueIdArr = getQueueLocalStoradge();
-    fetchLibraryQueue(queueIdArr);
-
+    btnIsActive(e);
+    if (queueIdArr === null) {
+        libraryNotMovieConteiner.classList.remove('is-hidden');
+        librarySectionWatched.classList.add('is-hidden');
+        librarySectionQueue.classList.add('is-hidden');
+    } else {
+        librarySectionQueue.classList.remove('is-hidden');
+        librarySectionWatched.classList.add('is-hidden');
+        libraryNotMovieConteiner.classList.add('is-hidden');
+        fetchLibraryQueue(queueIdArr);
+    }
     btnIsNotActive(libraryBtnWatched);
 }
 
 function btnIsActive(e) {
     const currentTargetElement = e.currentTarget;
     if (currentTargetElement) {
-        currentTargetElement.style.backgroundColor = '#FF6B01';
-        currentTargetElement.style.boxShadow = '0px 8px 43px 0px rgba(255, 107, 1, 0.6)';
+        currentTargetElement.classList.add('header-library__btn--active')
     } 
 }
     
 function btnIsNotActive(element) {
-    element.style.backgroundColor = 'inherit';
-    element.style.boxShadow = 'none';
+    element.classList.remove('header-library__btn--active')
 }
 
 libraryBtnWatched.addEventListener('click', onLibraryBtnWatchedClick);
 libraryBtnQueue.addEventListener('click', onLibraryBtnQueueClick)
+
+
+
+
+
+
+
+
+
+

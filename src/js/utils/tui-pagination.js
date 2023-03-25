@@ -1,9 +1,10 @@
 import Pagination from '../../../node_modules/tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+// import 'tui-pagination/dist/tui-pagination.css';
 import fetchTopMovieNext from '../api/fetchTopMovieNext';
 import fetchSearchMovie from '../api/fetchSearchMovie';
 import refs from '../refs';
 import { notifyFilure } from '../utils/notify';
+import { andList } from '../message-list';
 
 const { inputSearchForm } = refs;
 
@@ -37,8 +38,7 @@ pagination.on('beforeMove', (event, value) => {
   const totalPage = Number(localStorage.getItem('totalPage'));
   let page = event.page;
   if (page > totalPage) {
-    const message = 'Oops... you got to the end of the list';
-    notifyFilure(message);    
+    notifyFilure(andList);    
   } else {
     if (localStorage.getItem('query') === null) {
       fetchTopMovieNext(page);

@@ -1,13 +1,13 @@
 import refs from './refs';
 
-const { mainHeaderLibraryLink, libraryHeaderConteiner, mainGalleryConteiner, libraryMain, tuiPagination } = refs;
+const { mainHeaderLibraryLink, libraryHeaderContainer, mainGalleryContainer, libraryMain, tuiPagination } = refs;
 
 function onMainHeaderLibraryLinkClick() {
     if (!mainHeaderLibraryLink) {
         return;
     }
-    libraryHeaderConteiner.classList.remove('is-hidden');
-    mainGalleryConteiner.classList.add('is-hidden');
+    libraryHeaderContainer.classList.remove('is-hidden');
+    mainGalleryContainer.classList.add('is-hidden');
     libraryMain.classList.remove('is-hidden');
     tuiPagination.classList.add('is-hidden');
 }

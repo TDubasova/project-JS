@@ -2,13 +2,12 @@ import refs from './refs';
 import constants from './constants';
 import renderReleasDate from './release-date';
 import renderDefaultPoster from './renderDefaultPoster';
-import clearGalleryContainer from './clearGalleryConreiner';
 
-const { libraryConteinerQueue } = refs;
+const { libraryContainerQueue } = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 export function renderLibraryQueue(data) {
-  libraryConteinerQueue.innerHTML = '';
+  libraryContainerQueue.innerHTML = '';
   const marcupMovieWatch = data
     .map(
       ({ id, poster_path, release_date, genres, original_title }) =>
@@ -22,7 +21,7 @@ export function renderLibraryQueue(data) {
                 <h2 class="movie__title">${original_title}</h2>
                 <p class="movie__info">${genres.map(element => element.name).slice(0, 3)} | ${renderReleasDate(release_date)}</p>
           </div>`).join('');
-  libraryConteinerQueue.insertAdjacentHTML('afterbegin', marcupMovieWatch);
+  libraryContainerQueue.insertAdjacentHTML('afterbegin', marcupMovieWatch);
 }
 
 export default renderLibraryQueue;

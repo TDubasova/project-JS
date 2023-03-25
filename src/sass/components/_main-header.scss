@@ -7,28 +7,22 @@
 }
 
 .header-home {
-background-color: #FFFFFF;
+background-color: $primaryColor;
 background-image:
-    linear-gradient(to right,
-        rgba(0, 0, 0, 0.56),
-        rgba(0, 0, 0, 0.56)),
+    linear-gradient(to right, $linearGradientColor, $linearGradientColor),
     url(../images/background-320@1x.jpg);
 background-repeat: no-repeat;
 background-size: cover;
 
     @media screen and (min-width: 768px) {
         background-image:
-            linear-gradient(to right,
-                rgba(0, 0, 0, 0.56),
-                rgba(0, 0, 0, 0.56)),
+            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
             url(../images/background-768@1x.jpg);
     }
 
     @media screen and (min-width: 1280px) {
         background-image:
-            linear-gradient(to right,
-                rgba(0, 0, 0, 0.56),
-                rgba(0, 0, 0, 0.56)),
+            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
             url(../images/background-1280@1x.jpg);
     }
 }
@@ -39,31 +33,25 @@ background-size: cover;
 (min-resolution: 2dppx) {
     .header {
         background-image:
-            linear-gradient(to right,
-                rgba(0, 0, 0, 0.56),
-                rgba(0, 0, 0, 0.56)),
+            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
             url(../images/background-320@2x.png);
 
         @media screen and (min-width: 768px) {
             background-image:
-                linear-gradient(to right,
-                    rgba(0, 0, 0, 0.56),
-                    rgba(0, 0, 0, 0.56)),
+                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
                 url(../images/background-768@2x.jpg);
         }
 
         @media screen and (min-width: 1280px) {
             background-image:
-                linear-gradient(to right,
-                    rgba(0, 0, 0, 0.56),
-                    rgba(0, 0, 0, 0.56)),
+                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
                 url(../images/background-1280@2x.jpg);
         }
 
     }
 }
 
-.header-conteiner {
+.header-container {
     height: 230px;
     padding-top: 40px;
 
@@ -118,7 +106,7 @@ background-size: cover;
 
     @media screen and (min-width: 768px) {
         font-size: 30px;
-        color: #FFFFFF;
+        color: $primaryColor;
     } 
 }
 
@@ -131,7 +119,7 @@ background-size: cover;
 .header__link {
     display: block;
     position: relative;
-    color: #FFFFFF;
+    color: $primaryColor;
 }
 
 .header__link:not(:last-child) {
@@ -149,7 +137,7 @@ background-size: cover;
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: #FF001B;
+    background-color: $attentionColor;
 }
 
 .search__form {
@@ -159,7 +147,7 @@ background-size: cover;
     margin: 0 auto;
     margin-bottom: 16px;
     padding-bottom: 6px;
-    border-bottom: 0.5px solid #FFFFFF;
+    border-bottom: 0.5px solid $primaryColor;
 
     @media screen and (min-width: 768px) {
         width: 336px;
@@ -175,7 +163,7 @@ background-size: cover;
 .serch__input {
     border: none;
     width: 100%;
-    color: #FFFFFF;
+    color: $primaryColor;
     background-color: inherit;
     outline: 0 !important;
 }
@@ -191,7 +179,7 @@ background-size: cover;
 
 .search__message {
     text-align: center;
-    color: #FF001B;
+    color: $attentionColor;
     font-weight: 400;
     font-size: 14px;
 }

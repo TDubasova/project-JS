@@ -7,7 +7,7 @@ distance: '10px',
 opacity: 1,
 borderRadius: '5px',
 rtl: false,
-timeout: 10000,
+timeout: 1000,
 messageMaxLength: 110,
 backOverlay: false,
 backOverlayColor: 'rgba(0,0,0,0.5)',
@@ -21,8 +21,8 @@ zindex: 4001,
 fontFamily: 'Quicksand',
 fontSize: '24px',
 cssAnimation: true,
-cssAnimationDuration: 400,
-cssAnimationStyle: 'fade',
+cssAnimationDuration: 500,
+cssAnimationStyle: 'zoom',
 closeButton: false,
 useIcon: true,
 useFontAwesome: false,
@@ -47,6 +47,8 @@ fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
 backOverlayColor: 'rgba(255,85,73,0.2)',
 },
 });
+
+
 
 export function notifyFilure(message) {
     Notify.failure(message);

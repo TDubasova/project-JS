@@ -1,7 +1,7 @@
 import refs from './refs';
 
-const { galleryConteiner } = refs;
+const { galleryContainer } = refs;
 
 export default function clearGalleryContainer() {
-  galleryConteiner.innerHTML = '';
+  galleryContainer.innerHTML = '';
 }
