@@ -7,24 +7,24 @@
 }
 
 .header-home {
-background-color: $primaryColor;
-background-image:
-    linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-    url(../images/background-320@1x.jpg);
-background-repeat: no-repeat;
-background-size: cover;
+    background-color: $primaryColor;
+    background-image:
+        linear-gradient(to right, $linearGradientColor, $linearGradientColor),
+        url(../images/background-320@1x.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    @media screen and (min-width: 768px) {
-        background-image:
-            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-            url(../images/background-768@1x.jpg);
-    }
+        @media screen and (min-width: 768px) {
+            background-image:
+                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
+                url(../images/background-768@1x.jpg);
+        }
 
-    @media screen and (min-width: 1280px) {
-        background-image:
-            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-            url(../images/background-1280@1x.jpg);
-    }
+        @media screen and (min-width: 1280px) {
+            background-image:
+                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
+                url(../images/background-1280@1x.jpg);
+        }
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -90,8 +90,9 @@ background-size: cover;
 
     @media screen and (min-width: 1280px) {
         margin-right: 10px;
-    }
+    }    
 }
+
 
 .header__logo-title {
     @media screen and (max-width: 767px) {
@@ -186,4 +187,14 @@ background-size: cover;
 
 .search__message.is-hidden {
     display: none;
+}
+
+.header__link,
+.header__logo,
+.search__button {
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
 }

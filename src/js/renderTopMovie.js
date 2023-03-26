@@ -32,7 +32,7 @@ function renderTopMovie(response) {
                   genre_ids,
                   genresList
                   )} | ${renderReleasDate(release_date)}</p>
-              </div
+              </div>
         </li>`
     )
     .join('');

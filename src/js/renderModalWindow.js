@@ -146,7 +146,7 @@ function renderModalWindow(response) {
         <p class="movie-info__text">${genres.slice(0, 3).join(', ')}</p>
       </li>
         </ul>
-      <button type="button" class="modal__request-video" id='${id}'>Watch trailer</button>
+      <button type="button" class="modal__request-video" id='${id}'>Watch the trailer</button>
       <p class="movie-info__about">About</p>
       <p class="movie-info__text-about">${renderDefaultOverview(overview)}</p>`,
   ].join('');

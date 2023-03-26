@@ -3,15 +3,13 @@ import 'tui-pagination/dist/tui-pagination.css';
 import fetchLibraryWatch from './fetchLibraryWatch';
 import fetchLibraryQueue from './fetchLibraryQueue';
 import refs from '../../js/refs';
-import { getWatchedLocalStoradge, getQueueLocalStoradge } from '../localStorageService';
+import { watched, queue } from '../localStorageService';
 
 const { libraryNotMovieConteiner, libraryBtnWatched, libraryBtnQueue, librarySectionWatched, librarySectionQueue } = refs;
 
 function onLibraryBtnWatchedClick(e) {
-    const watchedIdArr = getWatchedLocalStoradge();
     btnIsActive(e);
-    if (watchedIdArr === null) {
-        console.log(watchedIdArr)
+    if (watched.length === 0) {
         libraryNotMovieConteiner.classList.remove('is-hidden');
         librarySectionWatched.classList.add('is-hidden');
         librarySectionQueue.classList.add('is-hidden');
@@ -19,15 +17,14 @@ function onLibraryBtnWatchedClick(e) {
         librarySectionQueue.classList.add('is-hidden');
         libraryNotMovieConteiner.classList.add('is-hidden');
         librarySectionWatched.classList.remove('is-hidden');        
-        fetchLibraryWatch(watchedIdArr);
+        fetchLibraryWatch(watched);
     }
     btnIsNotActive(libraryBtnQueue);
 }
 
 function onLibraryBtnQueueClick(e) {
-    const queueIdArr = getQueueLocalStoradge();
     btnIsActive(e);
-    if (queueIdArr === null) {
+    if (queue.length === 0) {
         libraryNotMovieConteiner.classList.remove('is-hidden');
         librarySectionWatched.classList.add('is-hidden');
         librarySectionQueue.classList.add('is-hidden');
@@ -35,7 +32,7 @@ function onLibraryBtnQueueClick(e) {
         librarySectionQueue.classList.remove('is-hidden');
         librarySectionWatched.classList.add('is-hidden');
         libraryNotMovieConteiner.classList.add('is-hidden');
-        fetchLibraryQueue(queueIdArr);
+        fetchLibraryQueue(queue);
     }
     btnIsNotActive(libraryBtnWatched);
 }

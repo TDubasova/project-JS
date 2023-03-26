@@ -260,47 +260,28 @@
 }
 
 .modal__request-video {
-    width: 108px;
-    height: 30px;
-    border: none;
+    display: block;
+    width: 136px;
+    height: 44px;
+    margin: 0 auto;
+    margin-bottom: 10px;
     padding: 0;
-    background-color: inherit;
-    text-align: left;
+    border-radius: 5px;
     text-transform: uppercase;
-    text-decoration: underline;
-    color: $activBtnColor;
-    line-height: 1.14;
-
-    @media screen and (min-width: 1280px) {
-        width: 152px;
-    }
+    border: 1px solid $primaryTextColor;
+    background-color: inherit;
 
     &:hover,
     &:focus {
         color: $attentionColor;
-        font-weight: 600px;
-        font-size: 16px;
+        background-color: $activBtnColor;
+        color: $primaryColor; 
+        border: none;
     }
     
     &.is-hidden{
         display: none;
     }
-}
-
-iframe {
-    width: 280px;
-    height: 416px;
-
-    @media screen and (min-width: 768px) {
-        width: 264px;
-        height: 374px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        width: 375px;
-        height: 478px;
-    }
-   
 }
 
 .movie-info__about {
@@ -341,11 +322,6 @@ iframe {
     border: 1px solid $primaryTextColor;
     background-color: inherit;
 
-    &:hover,
-    &:focus {
-        transform: scale(1.1);
-    }
-
     &.is-active {
         padding: 3px;
         background-color: $activBtnColor;
@@ -356,4 +332,15 @@ iframe {
 
 .modal__btn:first-child {
     margin-right: 15px;
+}
+
+.modal__request-video,
+.modal-header__close-btn,
+.modal__close-btn,
+.modal__btn {
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
 }
