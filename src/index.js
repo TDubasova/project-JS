@@ -6,11 +6,4 @@ import './js/api/apiServiseModalWindow';
 import './js/renderLibraryPage';
 import './js/api/apiServiseLibrary';
 
-
 loadTopMovies();
-
-
-
-
-
-

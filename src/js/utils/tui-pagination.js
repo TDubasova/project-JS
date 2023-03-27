@@ -1,5 +1,5 @@
-import Pagination from '../../../node_modules/tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 import fetchTopMovieNext from '../api/fetchTopMovieNext';
 import fetchSearchMovie from '../api/fetchSearchMovie';
 import refs from '../refs';

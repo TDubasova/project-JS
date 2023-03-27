@@ -34,6 +34,7 @@ const refs = {
   librarySectionQueue: document.querySelector('.js-library-queue'),
   libraryConreinerWatched: document.querySelector('.js-watched-set'),
   libraryContainerQueue: document.querySelector('.js-queue-set'),
+  intro: document.querySelector('.intro'),
 };
 
 export default refs;

@@ -1,5 +1,4 @@
 import pagination from '../utils/tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
 import fetchTopMovie from './fetchTopMovie';
 import fetchSearchMovie from './fetchSearchMovie';
 import refs from '../../js/refs';

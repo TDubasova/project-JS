@@ -101,7 +101,7 @@ ul {
 
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .header {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/background-320@2x.png);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/background-320@2x.jpg);
   }
 }
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), screen and (min-resolution: 192dpi) and (min-width: 768px), screen and (min-resolution: 2dppx) and (min-width: 768px) {
@@ -367,18 +367,21 @@ ul {
   display: none;
 }
 
-.library__not-movie,
 .watched,
 .queue {
   padding-top: 250px;
   background-color: #FFFFFF;
 }
 @media screen and (min-width: 768px) {
-  .library__not-movie,
   .watched,
   .queue {
     padding-top: 279px;
   }
+}
+
+.library__not-movie {
+  padding-top: 200px;
+  background-color: #FFFFFF;
 }
 
 .library__not-movie.is-hidden,
@@ -408,11 +411,54 @@ ul {
   }
 }
 
-.library__message-not-movie {
-  font-size: 56px;
-  color: #FF6B08;
+svg.intro {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  background: inherit;
+}
+svg.intro .text {
+  display: none;
+}
+svg.intro.go .text {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+}
+svg.intro.go .text-stroke {
+  fill: none;
+  stroke: #eaa476;
+  stroke-width: 2.8px;
+  stroke-dashoffset: -600;
+  stroke-dasharray: 600;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  animation: dash 2.5s ease-in-out forwards;
+}
+svg.intro.go .text-stroke:nth-child(2) {
+  animation-delay: 0.3s;
+}
+svg.intro.go .text-stroke:nth-child(3) {
+  animation-delay: 0.9s;
+}
+svg.intro.go .text-stroke-2 {
+  stroke: #FF6B01;
+  animation-delay: 1.2s;
+}
+svg.intro.go .text-stroke:nth-child(5) {
+  animation-delay: 1.5s;
+}
+svg.intro.go .text-stroke:nth-child(6) {
+  animation-delay: 1.8s;
 }
 
+@keyframes dash {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 .gallery.is-hidden {
   display: none;
 }

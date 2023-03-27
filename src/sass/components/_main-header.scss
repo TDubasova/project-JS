@@ -34,7 +34,7 @@
     .header {
         background-image:
             linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-            url(../images/background-320@2x.png);
+            url(../images/background-320@2x.jpg);
 
         @media screen and (min-width: 768px) {
             background-image:

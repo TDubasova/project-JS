@@ -2,7 +2,25 @@
   <h2 class="gallery__title title--hidden">My library</h2>
   
     <div class="container library__not-movie is-hidden js-library-not-movie">
-      <p class="library__message-not-movie">Not movie</p>
+      <svg class="intro" viewbox="0 0 200 86">               
+        <text x="50%" y="30" text-anchor="middle" class="text text-stroke" clip-path="url(#text1)">there are</text>
+        <text x="50%" y="50" text-anchor="middle" class="text text-stroke" clip-path="url(#text2)">no films</text>
+        <text x="50%" y="70" text-anchor="middle" class="text text-stroke" clip-path="url(#text3)">here...</text>
+        <text x="50%" y="30" text-anchor="middle" class="text text-stroke text-stroke-2" clip-path="url(#text1)">there are</text>
+        <text x="50%" y="50" text-anchor="middle" class="text text-stroke text-stroke-2" clip-path="url(#text2)">no films</text>
+        <text x="50%" y="70" text-anchor="middle" class="text text-stroke text-stroke-2" clip-path="url(#text3)">here...</text>
+        <defs>
+          <clipPath id="text1">
+            <text x="50%" y="30" text-anchor="middle" class="text">there are</text>
+          </clipPath>
+          <clipPath id="text2">
+            <text x="50%" y="50" text-anchor="middle" class="text">no films</text>
+          </clipPath>
+          <clipPath id="text3">
+            <text x="50%" y="70" text-anchor="middle" class="text">here...</text>
+          </clipPath>
+        </defs>
+      </svg>
     </div>
   
     <div class="container watched js-library-watched">

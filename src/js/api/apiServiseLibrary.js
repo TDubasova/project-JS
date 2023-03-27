@@ -1,18 +1,14 @@
-import pagination from '../utils/tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
 import fetchLibraryWatch from './fetchLibraryWatch';
 import fetchLibraryQueue from './fetchLibraryQueue';
 import refs from '../../js/refs';
 import { watched, queue } from '../localStorageService';
 
-const { libraryNotMovieConteiner, libraryBtnWatched, libraryBtnQueue, librarySectionWatched, librarySectionQueue } = refs;
+const { libraryNotMovieConteiner, libraryBtnWatched, libraryBtnQueue, librarySectionWatched, librarySectionQueue, intro } = refs;
 
 function onLibraryBtnWatchedClick(e) {
     btnIsActive(e);
     if (watched.length === 0) {
-        libraryNotMovieConteiner.classList.remove('is-hidden');
-        librarySectionWatched.classList.add('is-hidden');
-        librarySectionQueue.classList.add('is-hidden');
+        showNotMovieConteiner();
     } else {
         librarySectionQueue.classList.add('is-hidden');
         libraryNotMovieConteiner.classList.add('is-hidden');
@@ -25,9 +21,7 @@ function onLibraryBtnWatchedClick(e) {
 function onLibraryBtnQueueClick(e) {
     btnIsActive(e);
     if (queue.length === 0) {
-        libraryNotMovieConteiner.classList.remove('is-hidden');
-        librarySectionWatched.classList.add('is-hidden');
-        librarySectionQueue.classList.add('is-hidden');
+        showNotMovieConteiner();
     } else {
         librarySectionQueue.classList.remove('is-hidden');
         librarySectionWatched.classList.add('is-hidden');
@@ -47,6 +41,35 @@ function btnIsActive(e) {
 function btnIsNotActive(element) {
     element.classList.remove('header-library__btn--active')
 }
+
+function showNotMovieConteiner() {
+    removeMessage();
+    libraryNotMovieConteiner.classList.remove('is-hidden');
+    librarySectionWatched.classList.add('is-hidden');
+    librarySectionQueue.classList.add('is-hidden');
+        
+    libraryNotMovieConteiner.classList.contains('is-hidden') ? removeMessage() : addMessage();
+}
+
+let showMessage;
+let unShowMessage;
+function addMessage() {
+   showMessage = setInterval(() => {
+        intro.classList.add('go');
+        console.log(1)
+    }, 0); 
+    unShowMessage = setInterval(() => {
+        intro.classList.remove('go');
+         console.log(2)
+    }, 8000);   
+}
+
+function removeMessage() {
+    clearInterval(showMessage);
+    clearInterval(unShowMessage);
+}
+
+
 
 libraryBtnWatched.addEventListener('click', onLibraryBtnWatchedClick);
 libraryBtnQueue.addEventListener('click', onLibraryBtnQueueClick)
