@@ -1,6 +1,5 @@
 import refs from './refs';
 import { genresList } from './genresList';
-import clearGalleryContainer from './clearGalleryConreiner';
 import movieGenreId from './movieGenreId';
 import constants from './constants';
 import renderReleasDate from './release-date';
@@ -11,7 +10,7 @@ const { galleryContainer } = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function renderTopMovie(response) {
-  clearGalleryContainer();
+  galleryContainer.innerHTML = '';
 
   const data = response.data.results;
   const markup = data

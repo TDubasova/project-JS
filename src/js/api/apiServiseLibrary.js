@@ -1,6 +1,5 @@
-import fetchLibraryWatch from './fetchLibraryWatch';
-import fetchLibraryQueue from './fetchLibraryQueue';
 import refs from '../../js/refs';
+import { fetchLibraryWatch, fetchLibraryQueue } from './fetch';
 import { watched, queue } from '../localStorageService';
 
 const { libraryNotMovieConteiner, libraryBtnWatched, libraryBtnQueue, librarySectionWatched, librarySectionQueue, intro } = refs;
@@ -8,7 +7,7 @@ const { libraryNotMovieConteiner, libraryBtnWatched, libraryBtnQueue, librarySec
 function onLibraryBtnWatchedClick(e) {
     btnIsActive(e);
     if (watched.length === 0) {
-        showNotMovieConteiner();
+        showMovieConteiner();
     } else {
         librarySectionQueue.classList.add('is-hidden');
         libraryNotMovieConteiner.classList.add('is-hidden');
@@ -21,7 +20,7 @@ function onLibraryBtnWatchedClick(e) {
 function onLibraryBtnQueueClick(e) {
     btnIsActive(e);
     if (queue.length === 0) {
-        showNotMovieConteiner();
+        showMovieConteiner();
     } else {
         librarySectionQueue.classList.remove('is-hidden');
         librarySectionWatched.classList.add('is-hidden');
@@ -42,23 +41,22 @@ function btnIsNotActive(element) {
     element.classList.remove('header-library__btn--active')
 }
 
-function showNotMovieConteiner() {
+function showMovieConteiner() {
     removeMessage();
     libraryNotMovieConteiner.classList.remove('is-hidden');
     librarySectionWatched.classList.add('is-hidden');
     librarySectionQueue.classList.add('is-hidden');
-        
     libraryNotMovieConteiner.classList.contains('is-hidden') ? removeMessage() : addMessage();
 }
 
 let showMessage;
-let unShowMessage;
+let noShowMessage;
 function addMessage() {
    showMessage = setInterval(() => {
         intro.classList.add('go');
         console.log(1)
     }, 0); 
-    unShowMessage = setInterval(() => {
+    noShowMessage = setInterval(() => {
         intro.classList.remove('go');
          console.log(2)
     }, 8000);   
@@ -66,10 +64,8 @@ function addMessage() {
 
 function removeMessage() {
     clearInterval(showMessage);
-    clearInterval(unShowMessage);
+    clearInterval(noShowMessage);
 }
-
-
 
 libraryBtnWatched.addEventListener('click', onLibraryBtnWatchedClick);
 libraryBtnQueue.addEventListener('click', onLibraryBtnQueueClick)

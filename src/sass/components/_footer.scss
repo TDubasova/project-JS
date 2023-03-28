@@ -3,10 +3,19 @@
 }
 
 .footer-container {
+    display: block;
     height: 100px;
+    color: #545454;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
     
     @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: center;
         height: 79px;
+        font-size: 16px;
     }
 
     @media screen and (min-width: 1280px) {
@@ -14,66 +23,47 @@
     }
 }
 
-.footer__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    padding-top: 29px;
-    text-align: center;
-    color: $footerTextColor;
-    font-weight: 400;
-    font-size: 14px;
-
-    @media screen and (min-width: 768px) {
-        flex-direction: row;
-        justify-content: center;
-        width: 482px;
-        padding-top: 30px;
-        font-size: 16px;
-    }
-}
 
 .footer__copyright {
     @media screen and (max-width: 767px) {
         margin-bottom: 10px;
     }
-}
-
-.footer__developed {
-    margin: 0 auto;
-    justify-content: center;
-    display: flex;
-}
-
-.footer__developed-img {
-    width: 14px;
-    height: 13px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.footer__developed-text--withBtn {
-    display: flex;
-    justify-content: space-between;
-
-    @media screen and (max-width: 767px) {
-        width: 107px;
+    @media screen and (min-width: 768px) {
+        margin-right: 2px;
     }
 }
 
-.footer__developed-btn {
+.footer-container>div {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 767px) {
+         width: 236px;
+        margin: 0 auto;
+    }    
+}
+
+.footer__img {
     display: block;
-    border: none;
-    padding: 0;
-    background-color: inherit;
-    color: $footerTextColor;
-    font-weight: inherit;
-    font-size: inherit;
-    line-height: inherit;
+    width: 14px;
+    height: 13px;
+    @media screen and (min-width: 768px) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.footer__link {
+    display: block;
+    color: inherit;
     text-decoration: underline;
 
     @media screen and (min-width: 768px) {
         margin-left: 4px;
+    }
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        color: $activBtnColor;
     }
 }

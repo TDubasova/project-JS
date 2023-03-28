@@ -1,6 +1,5 @@
 import pagination from '../utils/tui-pagination';
-import fetchTopMovie from './fetchTopMovie';
-import fetchSearchMovie from './fetchSearchMovie';
+import {fetchTopMovie, fetchSearchMovie} from './fetch';
 import refs from '../../js/refs';
 
 const { searchForm } = refs;

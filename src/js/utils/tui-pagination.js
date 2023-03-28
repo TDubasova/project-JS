@@ -1,8 +1,6 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
-import fetchTopMovieNext from '../api/fetchTopMovieNext';
-import fetchSearchMovie from '../api/fetchSearchMovie';
 import refs from '../refs';
+import {fetchSearchMovie, fetchTopMovieNext} from '../api/fetch'
 import { notifyFilure } from '../utils/notify';
 import { andList } from '../message-list';
 

@@ -1,5 +1,5 @@
 import refs from '../../js/refs';
-import fetchModalWindow from './fetchModalWindow';
+import { fetchModalWindow } from './fetch';
 
 const { modalBackdrop, closeModalBtn, closeModalHeaderBtn, movieSet, libraryConreinerWatched, libraryContainerQueue } = refs;
 

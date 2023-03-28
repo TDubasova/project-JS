@@ -1,10 +1,8 @@
 import refs from './refs';
 import constants from './constants';
 import renderDefaultPoster from './renderDefaultPoster';
-import fetchMovieTreiler from './api/fetchMovieTreiler';
+import { fetchLibraryQueue, fetchLibraryWatch, fetchMovieTreiler } from './api/fetch';
 import renderDefaultOverview from './renderDefaultOverview';
-import fetchLibraryQueue from './api/fetchLibraryQueue';
-import fetchLibraryWatch from './api/fetchLibraryWatch';
 import { notifyInfo } from './utils/notify';
 import { addWatched, removeWatched, addQueue, removeQueue } from './message-list';
 import { watched, queue, setWatchedLocalStoradge, setQueueLocalStoradge, getQueueLocalStoradge, getWatchedLocalStoradge } from './localStorageService';
@@ -110,7 +108,7 @@ function renderModalWindow(response) {
     vote_count,
   } = data;
   
-  const setMovieId = localStorage.setItem('id', data.id);
+  localStorage.setItem('id', data.id);
 
   const genres = [];
   data.genres.map(element => genres.push(element.name));
