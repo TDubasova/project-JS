@@ -8,14 +8,13 @@ import renderLibraryWatch from '../renderLibraryWatch';
 import renderModalWindow from '../../js/renderModalWindow';
 import { loadingShow, loadingRemove } from '../utils/loading';
 
-const { TOP_MOVIE_URL, SEARCH_MOVIE_URL, MODAL_WINDOW_URL, API_KEY } = constants;
+const { TOP_MOVIE_URL, SEARCH_MOVIE_URL, MODAL_WINDOW_URL, API_KEY } =
+  constants;
 
 export async function fetchTopMovie() {
   loadingShow();
   await axios
-    .get(
-      `${TOP_MOVIE_URL}?api_key=${API_KEY}&page=1&adult=false`
-    )
+    .get(`${TOP_MOVIE_URL}?api_key=${API_KEY}&page=1&adult=false`)
     .then(function (response) {
       localStorage.setItem('totalPage', response.data.total_pages);
       renderTopMovie(response);
@@ -29,9 +28,7 @@ export async function fetchTopMovie() {
 export async function fetchTopMovieNext(page) {
   loadingShow();
   await axios
-    .get(
-      `${TOP_MOVIE_URL}?api_key=${API_KEY}&page=${page}&adult=false`
-    )
+    .get(`${TOP_MOVIE_URL}?api_key=${API_KEY}&page=${page}&adult=false`)
     .then(function (response) {
       loadingRemove();
       localStorage.setItem('totalPage', response.data.total_pages);
@@ -50,8 +47,8 @@ export async function fetchSearchMovie(page, searchValue) {
     )
     .then(function (response) {
       localStorage.setItem('totalPage', response.data.total_pages);
-        renderSearchMovie(response);
-        loadingRemove();
+      renderSearchMovie(response);
+      loadingRemove();
     })
     .catch(function (error) {
       console.log(error);
@@ -72,7 +69,7 @@ export async function fetchMovieTreiler(id) {
 }
 
 export async function fetchLibraryQueue(array) {
-    loadingShow();
+  loadingShow();
   const arrayOfMovies = array.map(async movie_id => {
     return await axios
       .get(`${MODAL_WINDOW_URL}/${movie_id}?api_key=${API_KEY}`)
@@ -82,13 +79,13 @@ export async function fetchLibraryQueue(array) {
       .catch(error => console.log(error));
   });
 
-    const resultData = await Promise.all(arrayOfMovies);
-    renderLibraryQueue(resultData);
-    loadingRemove();
+  const resultData = await Promise.all(arrayOfMovies);
+  renderLibraryQueue(resultData);
+  loadingRemove();
 }
 
 export async function fetchLibraryWatch(array) {
-    loadingShow();
+  loadingShow();
   const arrayOfMovies = array.map(async movie_id => {
     return await axios
       .get(`${MODAL_WINDOW_URL}/${movie_id}?api_key=${API_KEY}`)
@@ -98,9 +95,9 @@ export async function fetchLibraryWatch(array) {
       .catch(error => console.log(error));
   });
 
-    const resultData = await Promise.all(arrayOfMovies);
-    renderLibraryWatch(resultData);
-    loadingRemove();
+  const resultData = await Promise.all(arrayOfMovies);
+  renderLibraryWatch(resultData);
+  loadingRemove();
 }
 
 export async function fetchModalWindow(id) {

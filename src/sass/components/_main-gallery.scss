@@ -1,133 +1,133 @@
 .gallery.is-hidden {
-    display: none;
+  display: none;
 }
 
 .gallery {
-    padding-top: 250px;
-    background-color: $primaryColor;
+  padding-top: 250px;
+  background-color: $primaryColor;
 
-    @media screen and (min-width: 768px) {
-        padding-top: 275px;
-    }
+  @media screen and (min-width: 768px) {
+    padding-top: 275px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        padding-top: 276px;
-    }
+  @media screen and (min-width: 1280px) {
+    padding-top: 276px;
+  }
 }
 
 .movie__set {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-    @media screen and (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 32px;
-    }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        gap: 16px;
-    }
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
 }
 
 .movie__card {
-    width: 100%;
-    height: 450px;
-    border-radius: 5px;
-    transition: box-shadow .25s linear;
-    overflow: hidden;
-    box-shadow: 0 0 8px rgba(200, 200, 200, .8);
+  width: 100%;
+  height: 450px;
+  border-radius: 5px;
+  transition: box-shadow 0.25s linear;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(200, 200, 200, 0.8);
 
-    @media screen and (min-width: 320px) {
-        width: 280px;
-    }
+  @media screen and (min-width: 320px) {
+    width: 280px;
+  }
 
-    @media screen and (min-width: 768px) {
-        flex-basis: calc((100% - 32px) / 2);
-        height: 494px;
-    }
-    
-    @media screen and (min-width: 1280px) {
-        flex-basis: calc((100% - 2 * 16px) / 3);
-        height: 659px;
-        margin-bottom: 16px;
-    }
-   
-    &:not(:last-child) {
-        @media screen and (max-width: 767px) {
-             margin-bottom: 20px;
-        }
-    }
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 32px) / 2);
+    height: 494px;
+  }
 
-    &:hover,
-    &:focus {
-        cursor: pointer;
-        box-shadow: 0 0 16px rgba(0, 0, 0, .6);
-        // transform: scale(1.03);
+  @media screen and (min-width: 1280px) {
+    flex-basis: calc((100% - 2 * 16px) / 3);
+    height: 659px;
+    margin-bottom: 16px;
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 20px;
     }
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.6);
+    // transform: scale(1.03);
+  }
 }
 
 .movie__thumb {
-    width: 280px;
-    height: 402px;
-    overflow: hidden;
-    border-radius: 5px;
+  width: 280px;
+  height: 402px;
+  overflow: hidden;
+  border-radius: 5px;
 
-    @media screen and (min-width: 768px) {
-        width: 336px;
-        height: 455px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    height: 455px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        width: 394px;
-        height: 574px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 394px;
+    height: 574px;
+  }
 }
 
 .movie__img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .25s linear;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s linear;
 
-    .movie__card:hover &,
-    .movie__card:focus & {
-        transform: scale(1.03);
-    }
+  .movie__card:hover &,
+  .movie__card:focus & {
+    transform: scale(1.03);
+  }
 }
 
 .movie__description {
-    height: 45px;
-    padding: 8px;
+  height: 45px;
+  padding: 8px;
 
-    @media screen and (min-width: 1280px) {
-        height: 85px;
-    }
+  @media screen and (min-width: 1280px) {
+    height: 85px;
+  }
 }
 
 .movie__title {
-    // max-height: 22px;
-    margin-bottom: 4px;
-    // overflow: auto;
-    color: $primaryTextColor;
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
+  // max-height: 22px;
+  margin-bottom: 4px;
+  // overflow: auto;
+  color: $primaryTextColor;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
 
-    @media screen and (min-width: 1280px) {
-        font-size: 20px;
-        line-height: 1.02;
-    }
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 1.02;
+  }
 }
 
 .movie__info {
-    display: block;
-    color: $buttonColor;
+  display: block;
+  color: $buttonColor;
 
-    @media screen and (min-width: 1280px) {
-        font-size: 20px;
-        line-height: 1.02;
-    }
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 1.02;
+  }
 }

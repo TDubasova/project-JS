@@ -1,29 +1,42 @@
 <header class="header header-home">
-    <div class="container header-container">
-      <div class="header__menu">
-        <a class="header__logo header__logo--link" href="./index.html">
-          <img class="header__logo-img" 
-          srcset="./images/logo-24.png 1x,
-                  ./images/logo-24@2x.png 2x"
-          src='./images/logo-24.png'
-          alt="Filmoteka website logo as a piece of film"/>
-          <span class="header__logo-title">Filmoteka</span>
-        </a>
+  <div class="container header-container">
+    <div class="header__menu">
+      <a class="header__logo header__logo--link" href="./index.html">
+        <img
+          class="header__logo-img"
+          srcset="./images/logo-24.png 1x, ./images/logo-24@2x.png 2x"
+          src="./images/logo-24.png"
+          alt="Filmoteka website logo as a piece of film"
+        />
+        <span class="header__logo-title">Filmoteka</span>
+      </a>
       <nav class="header__navigation">
         <a href="#" class="header__link header__link--current">HOME</a>
-        <a href="#" class="header__link js-header-main-link-library">MY LIBRARY</a>
+        <a href="#" class="header__link js-header-main-link-library"
+          >MY LIBRARY</a
+        >
       </nav>
-      </div>
-      <form class="search__form js-search-form">
-        <input class="serch__input js-search-input" type="text" name="searchQuery" autocomplete="off" placeholder="Movie search" autofocus>
-        <button type="submit" class="search__button js-search-btn">
-          <img 
+    </div>
+    <form class="search__form js-search-form">
+      <input
+        class="serch__input js-search-input"
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Movie search"
+        autofocus
+      />
+      <button type="submit" class="search__button js-search-btn">
+        <img
           width="12"
           height="12"
           src="./images/search.png"
-          alt="Movie search button magnifying glass"/>
-        </button>
-      </form>
-      <p class="search__message is-hidden js-search-message">Search result not successful. Enter the correct movie name and</p>
-    </div>
+          alt="Movie search button magnifying glass"
+        />
+      </button>
+    </form>
+    <p class="search__message is-hidden js-search-message">
+      Search result not successful. Enter the correct movie name and
+    </p>
+  </div>
 </header>

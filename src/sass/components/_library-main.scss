@@ -1,100 +1,100 @@
 .gallery__main.is-hidden {
-    display: none;
+  display: none;
 }
 
 .watched,
 .queue {
-    padding-top: 250px;
-    background-color: $primaryColor;
+  padding-top: 250px;
+  background-color: $primaryColor;
 
-    @media screen and (min-width: 768px) {
-        padding-top: 279px;
-    }
+  @media screen and (min-width: 768px) {
+    padding-top: 279px;
+  }
 }
 
 .library__not-movie {
-    padding-top: 200px;
-    background-color: $primaryColor;
+  padding-top: 200px;
+  background-color: $primaryColor;
 }
 
 .library__not-movie.is-hidden,
 .watched.is-hidden,
 .queue.is-hidden {
-    display: none;
+  display: none;
 }
 
 .watched__set,
 .queue__set {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
-    @media screen and (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 32px;
-    }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        gap: 16px;
-    }
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
 }
 
 svg.intro {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height: 300px;
-    background: inherit;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  background: inherit;
 
+  .text {
+    display: none;
+  }
+
+  &.go {
     .text {
-        display: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      display: block;
     }
 
-    &.go {
-        .text {
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            display: block;
-        }
-
-        .text-stroke {
-            fill: none;
-            stroke: #eaa476;
-            stroke-width: 2.8px;
-            stroke-dashoffset: -600;
-            stroke-dasharray: 600;
-            stroke-linecap: butt;
-            stroke-linejoin: round;
-            animation: dash 2.5s ease-in-out forwards;
-        }
-
-        .text-stroke:nth-child(2) {
-            animation-delay: .3s;
-        }
-
-        .text-stroke:nth-child(3) {
-            animation-delay: .9s;
-        }
-
-        .text-stroke-2 {
-            stroke: $activBtnColor;
-            animation-delay: 1.2s;
-        }
-
-        .text-stroke:nth-child(5) {
-            animation-delay: 1.5s;
-        }
-
-        .text-stroke:nth-child(6) {
-            animation-delay: 1.8s;
-        }
+    .text-stroke {
+      fill: none;
+      stroke: #eaa476;
+      stroke-width: 2.8px;
+      stroke-dashoffset: -600;
+      stroke-dasharray: 600;
+      stroke-linecap: butt;
+      stroke-linejoin: round;
+      animation: dash 2.5s ease-in-out forwards;
     }
+
+    .text-stroke:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .text-stroke:nth-child(3) {
+      animation-delay: 0.9s;
+    }
+
+    .text-stroke-2 {
+      stroke: $activBtnColor;
+      animation-delay: 1.2s;
+    }
+
+    .text-stroke:nth-child(5) {
+      animation-delay: 1.5s;
+    }
+
+    .text-stroke:nth-child(6) {
+      animation-delay: 1.8s;
+    }
+  }
 }
 
 @keyframes dash {
-    100% {
-        stroke-dashoffset: 0;
-    }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }

@@ -1,13 +1,36 @@
 import refs from './refs';
 import constants from './constants';
 import renderDefaultPoster from './renderDefaultPoster';
-import { fetchLibraryQueue, fetchLibraryWatch, fetchMovieTreiler } from './api/fetch';
+import {
+  fetchLibraryQueue,
+  fetchLibraryWatch,
+  fetchMovieTreiler,
+} from './api/fetch';
 import renderDefaultOverview from './renderDefaultOverview';
 import { notifyInfo } from './utils/notify';
-import { addWatched, removeWatched, addQueue, removeQueue } from './message-list';
-import { watched, queue, setWatchedLocalStoradge, setQueueLocalStoradge, getQueueLocalStoradge, getWatchedLocalStoradge } from './localStorageService';
+import {
+  addWatched,
+  removeWatched,
+  addQueue,
+  removeQueue,
+} from './message-list';
+import {
+  watched,
+  queue,
+  setWatchedLocalStoradge,
+  setQueueLocalStoradge,
+  getQueueLocalStoradge,
+  getWatchedLocalStoradge,
+} from './localStorageService';
 
-const { modalImgContainer, modalMovieInfo, modalBtnWatched, modalBtnQueue, librarySectionQueue, librarySectionWatched } = refs;
+const {
+  modalImgContainer,
+  modalMovieInfo,
+  modalBtnWatched,
+  modalBtnQueue,
+  librarySectionQueue,
+  librarySectionWatched,
+} = refs;
 const { POSTER_URL_1x, POSTER_URL_2x } = constants;
 
 function onRequestVideoClick(event) {
@@ -47,7 +70,7 @@ function btnTransformIfMovieRemovFromQueue() {
   if (modalBtnQueue.classList.contains('is-active')) {
     modalBtnQueue.classList.remove('is-active');
     modalBtnQueue.textContent = 'add to queue';
-  };
+  }
 }
 
 function onModalBtnWatchedClick(e) {
@@ -56,9 +79,8 @@ function onModalBtnWatchedClick(e) {
     watched.push(id);
     setWatchedLocalStoradge(watched);
     notifyInfo(addWatched);
-    btnTransformIfMovieAddToWatched(e)
-  }
-  else {
+    btnTransformIfMovieAddToWatched(e);
+  } else {
     watched.splice(watched.indexOf(id), 1);
     setWatchedLocalStoradge(watched);
     notifyInfo(removeWatched);
@@ -70,7 +92,7 @@ function onModalBtnWatchedClick(e) {
       return;
     }
   }
-} 
+}
 
 function onModalBtnQueueClick(e) {
   const id = localStorage.getItem('id');
@@ -107,7 +129,7 @@ function renderModalWindow(response) {
     vote_average,
     vote_count,
   } = data;
-  
+
   localStorage.setItem('id', data.id);
 
   const genres = [];
@@ -121,7 +143,7 @@ function renderModalWindow(response) {
                 alt="movie's poster">`,
   ].join('');
   modalImgContainer.insertAdjacentHTML('afterbegin', markupImg);
-  
+
   const marcupMivieInfo = [
     `<h1 class="modal-window__title">${original_title}</h1>
     <ul class="movie-info__list">
@@ -158,7 +180,6 @@ function renderModalWindow(response) {
   } else {
     modalBtnWatched.textContent = 'add to watched';
     modalBtnWatched.classList.remove('is-active');
-
   }
 
   if (queue.includes(getMovieId)) {

@@ -16,4 +16,3 @@ export default function movieGenreId(genre_ids, genresList) {
     return arrayGenreName.join(', ');
   }
 }
-

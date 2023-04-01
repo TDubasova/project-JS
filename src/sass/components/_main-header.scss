@@ -1,200 +1,215 @@
 .header {
-    position: fixed;
-    box-sizing: border-box;
-    margin: 0 auto;
-    width: 100vw;
-    z-index: 10;
+  position: fixed;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100vw;
+  z-index: 10;
 }
 
 .header-home {
-    background-color: $primaryColor;
-    background-image:
-        linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-        url(../images/background-320@1x.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: $primaryColor;
+  background-image: linear-gradient(
+      to right,
+      $linearGradientColor,
+      $linearGradientColor
+    ),
+    url(../images/background-320@1x.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 
-        @media screen and (min-width: 768px) {
-            background-image:
-                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-                url(../images/background-768@1x.jpg);
-        }
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+        to right,
+        $linearGradientColor,
+        $linearGradientColor
+      ),
+      url(../images/background-768@1x.jpg);
+  }
 
-        @media screen and (min-width: 1280px) {
-            background-image:
-                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-                url(../images/background-1280@1x.jpg);
-        }
+  @media screen and (min-width: 1280px) {
+    background-image: linear-gradient(
+        to right,
+        $linearGradientColor,
+        $linearGradientColor
+      ),
+      url(../images/background-1280@1x.jpg);
+  }
 }
 
 @media (min-device-pixel-ratio: 2),
-(-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
-    .header {
-        background-image:
-            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-            url(../images/background-320@2x.jpg);
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header {
+    background-image: linear-gradient(
+        to right,
+        $linearGradientColor,
+        $linearGradientColor
+      ),
+      url(../images/background-320@2x.jpg);
 
-        @media screen and (min-width: 768px) {
-            background-image:
-                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-                url(../images/background-768@2x.jpg);
-        }
-
-        @media screen and (min-width: 1280px) {
-            background-image:
-                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-                url(../images/background-1280@2x.jpg);
-        }
-
+    @media screen and (min-width: 768px) {
+      background-image: linear-gradient(
+          to right,
+          $linearGradientColor,
+          $linearGradientColor
+        ),
+        url(../images/background-768@2x.jpg);
     }
+
+    @media screen and (min-width: 1280px) {
+      background-image: linear-gradient(
+          to right,
+          $linearGradientColor,
+          $linearGradientColor
+        ),
+        url(../images/background-1280@2x.jpg);
+    }
+  }
 }
 
 .header-container {
-    height: 230px;
-    padding-top: 40px;
+  height: 230px;
+  padding-top: 40px;
 
-    @media screen and (min-width: 768px) {
-        height: 216px;
-    }
-} 
+  @media screen and (min-width: 768px) {
+    height: 216px;
+  }
+}
 
 .header__menu {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 54px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 54px;
 
-    @media  screen and (min-width: 768px) {
-        margin-bottom: 40px;
-    }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
 }
 
 .header__logo {
-    @media screen and (min-width: 768px) {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }  
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .header__logo-img {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 
-    @media screen and (min-width: 768px) {
-        margin-right: 8px;
-    }
+  @media screen and (min-width: 768px) {
+    margin-right: 8px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        margin-right: 10px;
-    }    
+  @media screen and (min-width: 1280px) {
+    margin-right: 10px;
+  }
 }
 
-
 .header__logo-title {
-    @media screen and (max-width: 767px) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        border: 0;
-        padding: 0;
-        overflow: hidden;   
-    }
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+  }
 
-    @media screen and (min-width: 768px) {
-        font-size: 30px;
-        color: $primaryColor;
-    } 
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+    color: $primaryColor;
+  }
 }
 
 .header__navigation {
-    display: flex;
-    justify-content: center;
-       
+  display: flex;
+  justify-content: center;
 }
 
 .header__link {
-    display: block;
-    position: relative;
-    color: $primaryColor;
+  display: block;
+  position: relative;
+  color: $primaryColor;
 }
 
 .header__link:not(:last-child) {
-    margin-right: 40px;
+  margin-right: 40px;
 
-    @media screen and (min-width: 1280px) {
-        margin-right: 39px;
-    }
+  @media screen and (min-width: 1280px) {
+    margin-right: 39px;
+  }
 }
 
 .header__link--current::after {
-    content: "";
-    position: absolute;
-    top: 14px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: $attentionColor;
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: $attentionColor;
 }
 
 .search__form {
-    display: flex;
-    justify-content: space-between;
-    width: 280px;
-    margin: 0 auto;
-    margin-bottom: 16px;
-    padding-bottom: 6px;
-    border-bottom: 0.5px solid $primaryColor;
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+  border-bottom: 0.5px solid $primaryColor;
 
-    @media screen and (min-width: 768px) {
-        width: 336px;
-        padding-bottom: 4px;
-        margin-bottom: 20px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 336px;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        width: 394px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 394px;
+  }
 }
 
 .serch__input {
-    border: none;
-    width: 100%;
-    color: $primaryColor;
-    background-color: inherit;
-    outline: 0 !important;
+  border: none;
+  width: 100%;
+  color: $primaryColor;
+  background-color: inherit;
+  outline: 0 !important;
 }
 
 .serch__input::placeholder {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .search__button {
-    border: none;
-    background-color: inherit;
+  border: none;
+  background-color: inherit;
 }
 
 .search__message {
-    text-align: center;
-    color: $attentionColor;
-    font-weight: 400;
-    font-size: 14px;
+  text-align: center;
+  color: $attentionColor;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .search__message.is-hidden {
-    display: none;
+  display: none;
 }
 
 .header__link,
 .header__logo,
 .search__button {
-    &:hover,
-    &:focus {
-        cursor: pointer;
-        transform: scale(1.2);
-    }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 }

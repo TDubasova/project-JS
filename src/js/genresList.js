@@ -76,5 +76,3 @@ export const genresList = [
     name: 'Western',
   },
 ];
-
-

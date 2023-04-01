@@ -1,346 +1,347 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    opacity: 1;
-    visibility: visible;
-    transition: $opacity, $visibility;
-    z-index: 999;
-    overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 1;
+  visibility: visible;
+  transition: $opacity, $visibility;
+  z-index: 999;
+  overflow-y: scroll;
 
-    &.is-hidden {
-        opacity: 0;
-        pointer-events: none;
-        visibility: hidden;
-        transition: $opacity, $visibility;
-    }
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: $opacity, $visibility;
+  }
 }
 
 .modal__window {
-    position: absolute;
-    display: block;
-    margin: 0 auto;
-    top: 0;
-    left: calc((100vw - 320px) / 2);
-    height: 1318px;
-    width: 320px;
-    transform: translate(0%, 0%) scale(1);
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  top: 0;
+  left: calc((100vw - 320px) / 2);
+  height: 1318px;
+  width: 320px;
+  transform: translate(0%, 0%) scale(1);
+  transition: $transform;
+  background-color: $primaryColor;
+  color: $primaryTextColor;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 12px;
+
+  @media screen and (min-width: 768px) {
+    box-sizing: border-box;
+    width: 704px;
+    top: 219px;
+    left: calc((100vw - 704px) / 2);
+    height: 552px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 806px;
+    height: 558px;
+    top: 140px;
+    left: calc((100vw - 806px) / 2);
+  }
+
+  .backdrop.is-hidden & {
+    transform: translate(0%, 0%) scale(0.9);
     transition: $transform;
-    background-color: $primaryColor;
-    color: $primaryTextColor;
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 12px;
-
-    @media screen and (min-width: 768px) {
-        box-sizing: border-box;
-        width: 704px;
-        top: 219px;
-        left: calc((100vw - 704px) / 2);
-        height: 552px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        width: 806px;
-        height: 558px;
-        top: 140px;
-        left: calc((100vw - 806px) / 2);
-
-    }
-
-    .backdrop.is-hidden & {
-        transform: translate(0%, 0%) scale(0.9);
-        transition: $transform;
-    }
+  }
 }
 
 .modal__header {
-    height: 230px;
-    padding-top: 36px;
-    background-image: 
-    linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-        url(../images/modal-header-320@1x.jpg);
-    
+  height: 230px;
+  padding-top: 36px;
+  background-image: linear-gradient(
+      to right,
+      $linearGradientColor,
+      $linearGradientColor
+    ),
+    url(../images/modal-header-320@1x.jpg);
 
-        @media screen and (min-width: 768px) {
-            display: none;
-        }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .modal__container {
-    padding-right: 20px;
-    padding-left: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 
-    @media screen and (min-width: 768px) {
-        padding-left: 32px;
-        padding-right: 72px;
-    }
+  @media screen and (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 72px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
+  @media screen and (min-width: 1280px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
 .modal__header > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .modal-header__close-btn {
-    background-color: inherit;
-    border: none;
-    width: 44px;
-    height: 44px;
-    padding: 0;
+  background-color: inherit;
+  border: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
 }
 
 .modal__close-btn {
-    @media screen and (max-width: 767px) {
-        display: none;
-    }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
 
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    display: block;
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    border: none;
-    background-color: inherit;   
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: inherit;
 }
 
 .btn-header__icon {
-    fill: $primaryColor;
+  fill: $primaryColor;
 }
 
 .btn__icon {
-    fill: $primaryTextColor;
+  fill: $primaryTextColor;
 }
 
 .modal__movie-container {
-    padding-top: 20px;
+  padding-top: 20px;
 
-    @media screen and (max-width: 767px) {
-         margin-bottom: 40px;
-    }
-    @media screen and (min-width: 768px) {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 40px; 
-    }
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+  }
 }
 
 .modal-img__container {
-    width: 280px;
-    
-    @media screen and (max-width: 767px) {
-        margin-bottom: 30px;
-    }
+  width: 280px;
 
-    @media screen and (min-width: 768px) {
-        width: 264px;
-    }
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        width: 375px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 264px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 375px;
+  }
 }
 
 .modal__img {
-    width: 280px;
-    height: 416px;
-    margin: 0 auto;
-    border-radius: 5px;
+  width: 280px;
+  height: 416px;
+  margin: 0 auto;
+  border-radius: 5px;
 
-    @media screen and (min-width: 768px) {
-        width: 264px;
-        height: 374px;
-        margin: 0;
-        margin-right: 68px;
-    }
+  @media screen and (min-width: 768px) {
+    width: 264px;
+    height: 374px;
+    margin: 0;
+    margin-right: 68px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        width: 375px;
-        height: 478px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 375px;
+    height: 478px;
+  }
 }
 
 .modal-info__container {
-    @media screen and (min-width: 768px) {
-        display: block;
-        width: 264px;
-    }
+  @media screen and (min-width: 768px) {
+    display: block;
+    width: 264px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        width: 391px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 391px;
+  }
 }
 
 .modal-window__movie-info {
-    margin-bottom: 40px;
-    text-align: left;
+  margin-bottom: 40px;
+  text-align: left;
 
-    @media screen and (min-width: 768px) {
-        max-height: 464px;
-        margin-bottom: 20px;
-    }
+  @media screen and (min-width: 768px) {
+    max-height: 464px;
+    margin-bottom: 20px;
+  }
 }
 
 .modal-window__title {
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 20px;
-    text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .movie-info__list {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .movie-info__item {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .movie-info__item:not(:last-child) {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 
-    @media screen and (min-width: 768px) {
-        margin-bottom: 8px;
-    }
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8px;
+  }
 }
 
 .movie-info__type {
-    width: 108px;
-    color: #8C8C8C;
-    line-height: 1.14;
+  width: 108px;
+  color: #8c8c8c;
+  line-height: 1.14;
 
-    @media screen and (min-width: 1280px) {
-        width: 152px;
-    }
+  @media screen and (min-width: 1280px) {
+    width: 152px;
+  }
 }
 
 .movie-info__text {
-    width: max-content;
+  width: max-content;
 }
 
 .movie-info__text--flex {
-    display: flex;
-    align-items: baseline;
+  display: flex;
+  align-items: baseline;
 }
 
 .movie-info__text-orange {
-    box-sizing: border-box;
-    display: block;
-    width: 36px;
-    text-align: center;
-    margin: 0 auto;
-    padding: 1px 9px;
-    margin-right: 2px;
-    border-radius: 5px;
-    background-color: $activBtnColor;
-    color: $primaryColor;
-    line-height: 1;
+  box-sizing: border-box;
+  display: block;
+  width: 36px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1px 9px;
+  margin-right: 2px;
+  border-radius: 5px;
+  background-color: $activBtnColor;
+  color: $primaryColor;
+  line-height: 1;
 }
 
 .movie-info__text--title {
-    max-width: 173px;
-    text-transform: uppercase;
-    line-height: 1.14;
+  max-width: 173px;
+  text-transform: uppercase;
+  line-height: 1.14;
 
-    @media screen and (min-width: 768px) {
-        max-width: 108px;
-    }
+  @media screen and (min-width: 768px) {
+    max-width: 108px;
+  }
 }
 
 .modal__request-video {
-    display: block;
-    width: 136px;
-    height: 44px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    padding: 0;
-    border-radius: 5px;
-    text-transform: uppercase;
-    border: 1px solid $primaryTextColor;
-    background-color: inherit;
+  display: block;
+  width: 136px;
+  height: 44px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid $primaryTextColor;
+  background-color: inherit;
 
-    &:hover,
-    &:focus {
-        color: $attentionColor;
-        background-color: $activBtnColor;
-        color: $primaryColor; 
-        border: none;
-    }
-    
-    &.is-hidden{
-        display: none;
-    }
+  &:hover,
+  &:focus {
+    color: $attentionColor;
+    background-color: $activBtnColor;
+    color: $primaryColor;
+    border: none;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .movie-info__about {
-    font-weight: 500;
-    line-height: 1.14;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .movie-info__text-about {
-    line-height: 1.42;
+  line-height: 1.42;
 
-   @media screen and (min-width: 768px) {
-        max-height: 150px;
-        overflow: auto;
-   }
+  @media screen and (min-width: 768px) {
+    max-height: 150px;
+    overflow: auto;
+  }
 
-   @media screen and (min-width: 1280px) {
-        max-height: 160px;
-        overflow: auto;
-   }
+  @media screen and (min-width: 1280px) {
+    max-height: 160px;
+    overflow: auto;
+  }
 }
 
 .modal-container__btns {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .modal__btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 136px;
-    height: 44px;
-    padding: 0;
-    border-radius: 5px;
-    text-transform: uppercase;
-    border: 1px solid $primaryTextColor;
-    background-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 136px;
+  height: 44px;
+  padding: 0;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid $primaryTextColor;
+  background-color: inherit;
 
-    &.is-active {
-        padding: 3px;
-        background-color: $activBtnColor;
-        color: $primaryColor;
-        border: none;
-    }
+  &.is-active {
+    padding: 3px;
+    background-color: $activBtnColor;
+    color: $primaryColor;
+    border: none;
+  }
 }
 
 .modal__btn:first-child {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .modal__request-video,
 .modal-header__close-btn,
 .modal__close-btn,
 .modal__btn {
-    &:hover,
-    &:focus {
-        cursor: pointer;
-        transform: scale(1.1);
-    }
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 }

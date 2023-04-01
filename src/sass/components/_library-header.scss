@@ -1,110 +1,123 @@
 .is-hidden {
-    display: none;
+  display: none;
 }
 
 .header-library {
-    background-color: $primaryColor;
-    background-image:
-        linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-        url(../images/library-header-320.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-color: $primaryColor;
+  background-image: linear-gradient(
+      to right,
+      $linearGradientColor,
+      $linearGradientColor
+    ),
+    url(../images/library-header-320.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    @media screen and (min-width: 768px) {
-        background-image:
-            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-            url(../images/library-header-768.jpg);
-    }
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(
+        to right,
+        $linearGradientColor,
+        $linearGradientColor
+      ),
+      url(../images/library-header-768.jpg);
+  }
 
-    @media screen and (min-width: 1280px) {
-        background-image:
-            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-            url(../images/library-header-1280.jpg);
-    }
+  @media screen and (min-width: 1280px) {
+    background-image: linear-gradient(
+        to right,
+        $linearGradientColor,
+        $linearGradientColor
+      ),
+      url(../images/library-header-1280.jpg);
+  }
 }
 
 @media (min-device-pixel-ratio: 2),
-(-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
-    .header-library {
-        background-image:
-            linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-            url(../images/library-header-320@2x.jpg);
-    
-        @media screen and (min-width: 768px) {
-            background-image:
-                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-                url(../images/library-header-768@2x.jpg);
-            }
-    
-        @media screen and (min-width: 1280px) {
-            background-image:
-                linear-gradient(to right, $linearGradientColor, $linearGradientColor),
-                url(../images/library-header-1280@2x.jpg);
-            }
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .header-library {
+    background-image: linear-gradient(
+        to right,
+        $linearGradientColor,
+        $linearGradientColor
+      ),
+      url(../images/library-header-320@2x.jpg);
+
+    @media screen and (min-width: 768px) {
+      background-image: linear-gradient(
+          to right,
+          $linearGradientColor,
+          $linearGradientColor
+        ),
+        url(../images/library-header-768@2x.jpg);
     }
+
+    @media screen and (min-width: 1280px) {
+      background-image: linear-gradient(
+          to right,
+          $linearGradientColor,
+          $linearGradientColor
+        ),
+        url(../images/library-header-1280@2x.jpg);
+    }
+  }
 }
 
 .header-library__menu {
-
-    @media screen and (max-width: 767px) {
-        margin-bottom: 66px;
-    }
+  @media screen and (max-width: 767px) {
+    margin-bottom: 66px;
+  }
 }
 
 .header-library__btn-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-    @media screen and (min-width: 768px) {
-        justify-content: center;
-    }
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .header-library__btn {
-    display: block;
-    width: 130px;
-    height: 44px;
-    padding: 0px;
-    border-radius: 5px;
-    border: 1px solid $primaryColor;
-    background-color: inherit;
-    color: $primaryColor;
+  display: block;
+  width: 130px;
+  height: 44px;
+  padding: 0px;
+  border-radius: 5px;
+  border: 1px solid $primaryColor;
+  background-color: inherit;
+  color: $primaryColor;
 
+  @media screen and (min-width: 768px) {
+    width: 152px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
+    transform: scale(1.1);
+  }
+
+  &:first-child {
     @media screen and (min-width: 768px) {
-        width: 152px;
+      margin-right: 32px;
     }
 
-    &:hover,
-    &:focus {
-        box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
-        transform: scale(1.1);
+    @media screen and (min-width: 1280px) {
+      margin-right: 16px;
     }
-
-
-
-    &:first-child {
-        @media screen and (min-width: 768px) {
-            margin-right: 32px;
-        }
-
-        @media screen and (min-width: 1280px) {
-            margin-right: 16px;
-        }
-    }
-
+  }
 }
 
 .header-library__btn--active {
-    background-color: $activBtnColor;
-    box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
-    border: none;
+  background-color: $activBtnColor;
+  box-shadow: 0px 8px 43px 0px rgba(255, 107, 1, 0.6);
+  border: none;
 
-        &:hover,
-        &:focus {
-            transform: scale(1);
-        }
+  &:hover,
+  &:focus {
+    transform: scale(1);
+  }
 }
-

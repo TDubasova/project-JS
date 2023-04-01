@@ -1,7 +1,14 @@
 import refs from '../../js/refs';
 import { fetchModalWindow } from './fetch';
 
-const { modalBackdrop, closeModalBtn, closeModalHeaderBtn, movieSet, libraryConreinerWatched, libraryContainerQueue } = refs;
+const {
+  modalBackdrop,
+  closeModalBtn,
+  closeModalHeaderBtn,
+  movieSet,
+  libraryConreinerWatched,
+  libraryContainerQueue,
+} = refs;
 
 function modalBackdropToggle() {
   modalBackdrop.classList.toggle('is-hidden');
@@ -46,4 +53,3 @@ closeModalBtn.addEventListener('click', onCloseModalBtnClick);
 closeModalHeaderBtn.addEventListener('click', onCloseModalBtnClick);
 libraryConreinerWatched.addEventListener('click', onMovieSetClick);
 libraryContainerQueue.addEventListener('click', onMovieSetClick);
-

@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import refs from '../refs';
-import {fetchSearchMovie, fetchTopMovieNext} from '../api/fetch'
+import { fetchSearchMovie, fetchTopMovieNext } from '../api/fetch';
 import { notifyFilure } from '../utils/notify';
 import { andList } from '../message-list';
 
@@ -36,7 +36,7 @@ pagination.on('beforeMove', (event, value) => {
   const totalPage = Number(localStorage.getItem('totalPage'));
   let page = event.page;
   if (page > totalPage) {
-    notifyFilure(andList);    
+    notifyFilure(andList);
   } else {
     if (localStorage.getItem('query') === null) {
       fetchTopMovieNext(page);

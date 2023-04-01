@@ -22,9 +22,13 @@ export function renderLibraryQueue(data) {
                  </div>
             <div class="movie__description">
                 <h2 class="movie__title">${original_title}</h2>
-                <p class="movie__info">${genres.map(element => element.name).slice(0, 3)} | ${renderReleasDate(release_date)}</p>
+                <p class="movie__info">${genres
+                  .map(element => element.name)
+                  .slice(0, 3)} | ${renderReleasDate(release_date)}</p>
           </div>
-        </li>`).join('');
+        </li>`
+    )
+    .join('');
   libraryContainerQueue.insertAdjacentHTML('afterbegin', marcupMovieWatch);
 }
 

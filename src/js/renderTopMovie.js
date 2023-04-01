@@ -30,12 +30,12 @@ function renderTopMovie(response) {
                 <p class="movie__info">${movieGenreId(
                   genre_ids,
                   genresList
-                  )} | ${renderReleasDate(release_date)}</p>
+                )} | ${renderReleasDate(release_date)}</p>
               </div>
         </li>`
     )
     .join('');
-  
+
   galleryContainer.insertAdjacentHTML('beforeend', markup);
 }
 
